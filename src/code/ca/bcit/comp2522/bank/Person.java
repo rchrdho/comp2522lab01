@@ -26,7 +26,7 @@ public class Person
     }
 
     /**
-     * Gets the details of the client in format
+     * Gets the details of the client formatted.
      * @return Full Name (alive/died + date) was born DAY, MONTH DATE, YEAR
      */
     public String getDetails()
@@ -41,7 +41,7 @@ public class Person
     {
         final String[] months = {"January", "February", "March", "April", "May", "June", "July", "August",
                 "September", "October","November", "December"};
-        return months[month + 1];
+        return months[month - 1];
     }
 
 }
