@@ -41,6 +41,12 @@ public class BankAccount
      */
     public void withdraw(final double amountUsd, final int pinToMatch)
     {
+        if (pinToMatch != pin)
+        {
+            throw new IllegalArgumentException("Invalid pin");
+        }
+        balanceUsd -= amountUsd;
+        System.out.println("-" + amountUsd + " Withdrawn\nNew Balance: " + balanceUsd);
     }
 
     /**
@@ -56,11 +62,11 @@ public class BankAccount
 
         if (accountClosedDate == null)
         {
-            returnString.append("and is still open");
+            returnString.append(" and is still open");
         }
         else
         {
-            returnString.append(" and closed " + accountClosedDate.getDayOfTheWeek() + " " + client.getMonthName(accountClosedDate.getMonth()) + accountClosedDate.getMonth() + " " + accountClosedDate.getDay() + ", " + accountClosedDate.getYear());
+            returnString.append(" and closed " + accountClosedDate.getDayOfTheWeek() + " " + client.getMonthName(accountClosedDate.getMonth()) + " " + accountClosedDate.getDay() + ", " + accountClosedDate.getYear());
         }
         return returnString.toString();
     }

@@ -49,7 +49,8 @@ public class Name
     private static void validateFirstName(final String first)
     {
         // if first is null, blank, or less than maximum length, throw exception
-        if (first == null || first.isBlank() || first.length() > MAX_NAME_LENGTH_CHARS || first.toLowerCase().contains("admin"))
+        if (first == null || first.isBlank() || first.length() > MAX_NAME_LENGTH_CHARS
+                || first.toLowerCase().contains("admin"))
         {
             throw new IllegalArgumentException("Invalid first name entry");
         }
@@ -58,7 +59,8 @@ public class Name
     private static void validateLastName(final String last)
     {
         // if last is null, blank, or less than maximum length, throw exception
-        if (last == null || last.isBlank() || last.length() > MAX_NAME_LENGTH_CHARS || last.toLowerCase().contains("admin"))
+        if (last == null || last.isBlank() || last.length() > MAX_NAME_LENGTH_CHARS
+                || last.toLowerCase().contains("admin"))
         {
             throw new IllegalArgumentException("Invalid last name entry");
         }
