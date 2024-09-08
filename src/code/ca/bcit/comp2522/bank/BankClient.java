@@ -1,8 +1,7 @@
 package ca.bcit.comp2522.bank;
 
-import javax.xml.namespace.QName;
-
-public class BankClient extends Person {
+public class BankClient extends Person
+{
 
     /**
      * Date that client signed up
@@ -10,7 +9,7 @@ public class BankClient extends Person {
     private final Date signupDate;
 
     /**
-     *  Client ID; must be 6 or 7 digits long
+     * Client ID; must be 6 or 7 digits long
      */
     private final String clientID;
 
@@ -25,31 +24,39 @@ public class BankClient extends Person {
 
     /**
      * Constructor for BankClient
+     *
      * @param signupDate
      * @param clientID
      */
-    public BankClient(final Date signupDate, final String clientID) {
+    public BankClient(final Date signupDate, final String clientID, final Person person)
+    {
+        super(person.getName(), person.getBirthDate(), person.getDeathDate());
+
         validateClientID(clientID);
         this.signupDate = signupDate;
         this.clientID = clientID;
     }
 
     /**
-     *  Gets the details of the client
+     * Gets the details of the client
      *
      * @return A string in the format Full Name client #12345 (alive / not alive) joined the bank on
      * DAY, MONTH DATE, YEAR
      */
-//    private String getDetails() {
-//
-//    }
+    public String getDetails()
+    {
+        return super.getDetails();
+    }
 
     /**
      * Validates that the clientID is between 6 and 7 digits long
+     *
      * @param clientID
      */
-    private void validateClientID(String clientID) {
-        if (clientID.length() < MIN_CLIENTID_LENGTH || clientID.length() > MAX_CLIENTID_LENGTH) {
+    private void validateClientID(String clientID)
+    {
+        if (clientID.length() < MIN_CLIENTID_LENGTH || clientID.length() > MAX_CLIENTID_LENGTH)
+        {
             throw new IllegalArgumentException("Invalid Client ID");
         }
     }

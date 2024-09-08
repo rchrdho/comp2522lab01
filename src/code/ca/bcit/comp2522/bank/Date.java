@@ -6,12 +6,13 @@ package ca.bcit.comp2522.bank;
  * individually. A method that can calculate the exact day of the week, ie: Wednesday. Helper methods are implemented
  * to determine a leap year to calculate the number of days for the month
  *
- * @author Richard Ho and Jayden Hutchinson
+ * @author Richard Ho
+ * @author Jayden Hutchinson
  * @version 2.0
  */
 public class Date
 {
-
+    // symbolic constants
     final static int MIN_NUM_YEARS = 1800;
     final static int CURRENT_YEAR = 2024;
     final static int MIN_NUM_MONTHS = 1;
@@ -72,9 +73,9 @@ public class Date
     /**
      * Constructs the date object.
      *
-     * @param year between 1 and current year
+     * @param year  between 1 and current year
      * @param month between 1 and 12
-     * @param day between 1 and max number of days for tht month
+     * @param day   between 1 and max number of days for tht month
      */
     public Date(final int year, final int month, final int day)
     {
@@ -114,8 +115,10 @@ public class Date
 
     /**
      * Uses isLeapYear to validate and check for maximum number of days in the month with conditional logic.
+     *
      * @param month a Integer
-     * @param year a Integer
+     * @param year  a Integer
+     *
      * @return The number of total days in the month with leap year considered
      */
     private static int getMaxDaysInMonth(final int month, final int year)
@@ -134,16 +137,19 @@ public class Date
     /**
      * Conditional to return true if the calculated year is a leap year, false if not.
      * Calculation for this found off of Google
+     *
      * @param year an integer
+     *
      * @return a boolean value
      */
     private static boolean isLeapYear(final int year)
     {
-        return(year % FOUR == ZERO && year % HUNDRED != ZERO) || (year % FOUR_HUNDRED == ZERO);
+        return (year % FOUR == ZERO && year % HUNDRED != ZERO) || (year % FOUR_HUNDRED == ZERO);
     }
 
     /**
      * Accessor for day.
+     *
      * @return the day
      */
     public int getDay()
@@ -153,6 +159,7 @@ public class Date
 
     /**
      * Accessor for month.
+     *
      * @return the month
      */
     public int getMonth()
@@ -162,6 +169,7 @@ public class Date
 
     /**
      * Accessor for the Year.
+     *
      * @return the year
      */
     public int getYear()
@@ -171,6 +179,7 @@ public class Date
 
     /**
      * Accessor for the full date formatted in Year-Month-Day.
+     *
      * @return a formatted date String (e.g. 2024-09-07)
      */
     public String getYYYYMMDD()
@@ -188,6 +197,7 @@ public class Date
      * Step 3 calculate the number of fours in step 2's result, Step 4 add day of the month to each step results,
      * Step 5 add the month code assigned of the month to the sum total, Step 6 mod the sum of Step 5,
      * Step 7 Result of step 6 represents the current day of the week
+     *
      * @return day of the week a String
      */
     public String getDayOfTheWeek()
@@ -223,26 +233,35 @@ public class Date
 
         switch (sumWithMonthCode % DAYS_IN_WEEK)
         {
-            case SATURDAY: return "Saturday";
-            case SUNDAY: return "Sunday";
-            case MONDAY: return "Monday";
-            case TUESDAY: return "Tuesday";
-            case WEDNESDAY: return "Wednesday";
-            case THURSDAY: return "Thursday";
-            case FRIDAY: return "Friday";
-            default: return "Unknown";
+            case SATURDAY:
+                return "Saturday";
+            case SUNDAY:
+                return "Sunday";
+            case MONDAY:
+                return "Monday";
+            case TUESDAY:
+                return "Tuesday";
+            case WEDNESDAY:
+                return "Wednesday";
+            case THURSDAY:
+                return "Thursday";
+            case FRIDAY:
+                return "Friday";
+            default:
+                return "Unknown";
         }
     }
 
     /**
      * returns values that correlate to base year
-      */
+     */
     private static int getCenturyOffset(final int year)
     {
         if (year >= TWO_THOUSANDS)
         {
             return SIX;
-        } else if (year < NINETEEN_HUNDREDS)
+        }
+        else if (year < NINETEEN_HUNDREDS)
         {
             return TWO;
         }
@@ -252,30 +271,42 @@ public class Date
     // helper method that returns the month code
     private static int getMonthCode(final int month)
     {
-        switch(month)
+        switch (month)
         {
-            case JANUARY: return JANUARY_CODE;
-            case FEBRUARY: return FEBRUARY_CODE;
-            case MARCH: return MARCH_CODE;
-            case APRIL: return APRIL_CODE;
-            case MAY: return MAY_CODE;
-            case JUNE: return JUNE_CODE;
-            case JULY: return JULY_CODE;
-            case AUGUST: return AUGUST_CODE;
-            case SEPTEMBER: return SEPTEMBER_CODE;
-            case OCTOBER: return OCTOBER_CODE;
-            case NOVEMBER: return NOVEMBER_CODE;
-            case DECEMBER: return DECEMBER_CODE;
-            default: throw new IllegalArgumentException("Invalid month entry");
+            case JANUARY:
+                return JANUARY_CODE;
+            case FEBRUARY:
+                return FEBRUARY_CODE;
+            case MARCH:
+                return MARCH_CODE;
+            case APRIL:
+                return APRIL_CODE;
+            case MAY:
+                return MAY_CODE;
+            case JUNE:
+                return JUNE_CODE;
+            case JULY:
+                return JULY_CODE;
+            case AUGUST:
+                return AUGUST_CODE;
+            case SEPTEMBER:
+                return SEPTEMBER_CODE;
+            case OCTOBER:
+                return OCTOBER_CODE;
+            case NOVEMBER:
+                return NOVEMBER_CODE;
+            case DECEMBER:
+                return DECEMBER_CODE;
+            default:
+                throw new IllegalArgumentException("Invalid month entry");
         }
     }
-//    // Test
-//    public static void main (final String [] args)
-//    {
-//        Date date = new Date(1977, 10, 31);
-//        System.out.println(date.getDayOfTheWeek());
-//
-//    }
 
+    // Test
+    public static void main(final String[] args)
+    {
+        Date date = new Date(1977, 10, 31);
+        System.out.println(date.getYYYYMMDD());
+
+    }
 }
-

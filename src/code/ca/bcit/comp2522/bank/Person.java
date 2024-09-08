@@ -105,4 +105,19 @@ public class Person
                 return "Unknown";
         }
     }
+
+    public Name getName()
+    {
+        return name;
+    }
+
+    public Date getBirthDate()
+    {
+        return birthDate;
+    }
+
+    public Date getDeathDate()
+    {
+        return deathDate;
+    }
 }
