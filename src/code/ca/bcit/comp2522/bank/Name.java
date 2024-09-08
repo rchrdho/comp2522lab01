@@ -114,9 +114,10 @@ public class Name
         final StringBuilder fullName;
         fullName = new StringBuilder();
 
+        // creates a string of the first and last name with capital first letter and lower case for the rest
         fullName.append(first.substring(FIRST_CHAR, SECOND_CHAR).toUpperCase() + first.substring(SECOND_CHAR, first.length()).toLowerCase()); // append first name with capital first letter and lower rest
         fullName.append(" "); // append space
-        fullName.append(last.substring(FIRST_CHAR, SECOND_CHAR).toUpperCase() + last.substring(SECOND_CHAR, first.length()).toLowerCase()); // append last name with capital first letter and lower rest
+        fullName.append(last.substring(FIRST_CHAR, SECOND_CHAR).toUpperCase() + last.substring(SECOND_CHAR, last.length()).toLowerCase()); // append last name with capital first letter and lower rest
 
         return fullName.toString(); // return first and last name
     }
