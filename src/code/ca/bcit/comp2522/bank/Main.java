@@ -71,6 +71,7 @@ public class Main
         ALBERT_EINSTEIN_DEATH_YEAR = 1955; // year
 
         // Bank Account
+        final String ALBERT_EINSTEIN_CLIENTID = "AlbertE";
         ALBERT_EINSTEIN_BANK_ACCOUNT_NUMBER = "#abc123"; // account number
         ALBERT_EINSTEIN_BANK_PIN = 3141; // pin
 
@@ -107,7 +108,7 @@ public class Main
         albertEinstein = new Person(albertEinsteinName, albertEinsteinBirthDate, albertEinsteinDeathDate);
 
         // Bank Client
-        albertEinsteinBankClient = new BankClient(albertEinsteinAccountOpenedDate, ALBERT_EINSTEIN_BANK_ACCOUNT_NUMBER, albertEinstein);
+        albertEinsteinBankClient = new BankClient(albertEinsteinAccountOpenedDate, ALBERT_EINSTEIN_CLIENTID, albertEinstein);
 
         //Bank account
         albertEinsteinBankAccount = new BankAccount(albertEinsteinBankClient, ALBERT_EINSTEIN_BANK_ACCOUNT_NUMBER, ALBERT_EINSTEIN_BANK_PIN, ALBERT_EINSTEIN_BANK_BALANCE_USD, albertEinsteinAccountOpenedDate, albertEinsteinAccountClosedDate);
