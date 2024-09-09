@@ -139,7 +139,7 @@ public class Main
         // Nelson Mandela
         final String nelsonMandelaFirstName = "Nelson";
         final String nelsonMandelaLastName = "Mandela";
-        
+
         // Birth Date
         final int NELSON_MANDELA_BIRTH_YEAR = 1918;
         final int NELSON_MANDELA_BIRTH_MONTH = 6;
@@ -197,6 +197,7 @@ public class Main
 
         // withdraw $200
         nelsonMandelaBankAccount.withdraw(NELSON_MANDELA_WITHDRAWAL_AMOUNT);
+
         // person object Frido Kahlo (July 6, 1907 - July 13, 1954)
         // BankAccount #frd123: signed up January 1, 1940 and closed July 13, 1954
         // pin 1907

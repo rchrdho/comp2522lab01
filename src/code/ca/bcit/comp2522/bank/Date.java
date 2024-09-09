@@ -312,11 +312,17 @@ public class Date
         }
     }
 
-    // Test
+    // Test for public methods in Date Class
     public static void main(final String[] args)
     {
         Date date = new Date(1977, 10, 31);
+
+        System.out.println(date);
         System.out.println(date.getYYYYMMDD());
+        System.out.println(date.getDayOfTheWeek());
+        System.out.println(date.getDay());
+        System.out.println(date.getMonth());
+        System.out.println(date.getYear());
 
     }
 }

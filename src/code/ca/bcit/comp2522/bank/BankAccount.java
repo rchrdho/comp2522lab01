@@ -50,8 +50,8 @@ public class BankAccount
     {
         // subtract the given amount from the current balance
         balanceUsd -= amountToWithdrawUsd;
-        System.out.println("-" + amountToWithdrawUsd + " Withdrawn\nNew Balance: " + balanceUsd + "\n"); // print the
-        // transaction
+        // print the transaction
+        System.out.println("-" + amountToWithdrawUsd + " Withdrawn\nNew Balance: " + balanceUsd + "\n");
     }
 
     /**
