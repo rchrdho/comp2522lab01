@@ -1,5 +1,14 @@
 package ca.bcit.comp2522.bank;
 
+/**
+ * BankClient Class.
+ * Provides sign up date, client ID, and Person details.
+ * it extends the Person Class and overrides the Person Class' getDetails() to a formatted output.
+ *
+ * @author Jayden Hutchinson
+ * @author Richard Ho
+ * @version 1.0
+ */
 public class BankClient extends Person
 {
 
@@ -23,10 +32,10 @@ public class BankClient extends Person
     private static final int MAX_CLIENTID_LENGTH = 7;
 
     /**
-     * Constructor for BankClient
+     * Constructor for BankClient.
      *
-     * @param signupDate
-     * @param clientID
+     * @param signupDate a Date this Client signed up on
+     * @param clientID   a String that represents this Client
      */
     public BankClient(final Date signupDate, final String clientID, final Person person)
     {
@@ -53,7 +62,9 @@ public class BankClient extends Person
     /**
      * Validates that the clientID is between 6 and 7 digits long
      *
-     * @param clientID
+     * @param clientID a String for ClientID
+     *
+     * @throws IllegalArgumentException if ClientID is invalid
      */
     private void validateClientID(String clientID)
     {

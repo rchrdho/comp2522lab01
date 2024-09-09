@@ -1,7 +1,7 @@
 package ca.bcit.comp2522.bank;
 
 /**
- * Provides the name, birth date, and death date [can be null]
+ * Provides the name, birthdate, and death date [can be null]
  * Will print out a String giving the person's name their status [alive/dead with full date], and their full birth date.
  * Is capable of converting the current month's integer into the given month's name
  *

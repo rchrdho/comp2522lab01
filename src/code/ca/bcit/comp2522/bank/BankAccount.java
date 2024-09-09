@@ -1,5 +1,15 @@
 package ca.bcit.comp2522.bank;
 
+/**
+ * BankAccount Class.
+ * Provides Bank Client, Account Number, Pin, account balance, Date account opened,
+ * and Date account closed[can be null]
+ * Has Methods to withdraw from bank balance.
+ *
+ * @author Jayden Hutchinson
+ * @author Richard Ho
+ * @version 1.0
+ */
 public class BankAccount
 {
     double balanceUsd;
@@ -10,6 +20,16 @@ public class BankAccount
     private final Date accountClosedDate;
     private final int pin;
 
+    /**
+     * Constructs the BankAccount object.
+     *
+     * @param client            a BankClient
+     * @param accountNumber     a String assigned the persons account
+     * @param pin               an Integer that unlocks account for use
+     * @param balanceUsd        an Integer for the persons balance
+     * @param accountOpenedDate a Date this person opened account
+     * @param accountClosedDate a Date this person closed account
+     */
     public BankAccount(final BankClient client, final String accountNumber, final int pin, final int balanceUsd, final Date accountOpenedDate, final Date accountClosedDate)
     {
         // assign variables
@@ -24,7 +44,7 @@ public class BankAccount
     /**
      * Withdraws the given amount USD from the clients bank account
      *
-     * @param amountUsd
+     * @param amountUsd Amount to withdraw from account
      */
     public void withdraw(final double amountUsd)
     {
@@ -39,6 +59,8 @@ public class BankAccount
      *
      * @param amountUsd  Amount to withdraw from account
      * @param pinToMatch The clients pin
+     *
+     * @throws IllegalArgumentException Invalid pin if pin does not match
      */
     public void withdraw(final double amountUsd, final int pinToMatch)
     {
