@@ -111,7 +111,7 @@ public class Date
 
     private static void validateDay(final int day, final int month, final int year)
     {
-        // get days in month based on which month it is 
+        // get days in month based on which month it is
         final int maxDay = getMaxDaysInMonth(month, year);
         // if day is less than minimum number of days or maximum number of days throw illegal argument exception
         if (day < MIN_NUM_DAYS || day > maxDay)
@@ -130,6 +130,7 @@ public class Date
      */
     private static int getMaxDaysInMonth(final int month, final int year)
     {
+        // returns the days in the month given the current date and if it is a leap year
         switch (month)
         {
             case FEBRUARY:
@@ -192,7 +193,7 @@ public class Date
     public String getYYYYMMDD()
     {
         final String fullDate;
-
+        
         fullDate = String.format("%04d-%02d-%02d", year, month, day);
         return fullDate;
     }
