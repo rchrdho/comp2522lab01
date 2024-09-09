@@ -79,10 +79,12 @@ public class Date
      */
     public Date(final int year, final int month, final int day)
     {
+        // validate inputs
         validateYear(year);
         validateMonth(month);
         validateDay(day, month, year);
 
+        // initialization
         this.year = year;
         this.month = month;
         this.day = day;
@@ -90,6 +92,7 @@ public class Date
 
     private static void validateYear(final int year)
     {
+        // if year is less than minimum number of years or greater than current year throw illegal argument exception
         if (year < MIN_NUM_YEARS || year > CURRENT_YEAR)
         {
             throw new IllegalArgumentException("Invalid year entry: " + year);
@@ -98,6 +101,8 @@ public class Date
 
     private static void validateMonth(final int month)
     {
+        // if month is less than minimum number of month or greater than maximum number of months throw illegal
+        // argument exception
         if (month < MIN_NUM_MONTHS || month > MAX_NUM_MONTHS)
         {
             throw new IllegalArgumentException("Invalid month entry: " + month);
@@ -106,7 +111,9 @@ public class Date
 
     private static void validateDay(final int day, final int month, final int year)
     {
+        // get days in month based on which month it is 
         final int maxDay = getMaxDaysInMonth(month, year);
+        // if day is less than minimum number of days or maximum number of days throw illegal argument exception
         if (day < MIN_NUM_DAYS || day > maxDay)
         {
             throw new IllegalArgumentException("Invalid day entry: " + day);

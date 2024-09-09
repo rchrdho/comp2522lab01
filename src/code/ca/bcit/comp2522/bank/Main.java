@@ -28,6 +28,8 @@ public class Main
         // VARIABLES
         final Person albertEinstein;
         final Name albertEinsteinName;
+        final String albertEinsteinFirstName;
+        final String albertEinsteinLastName;
         final Date albertEinsteinBirthDate;
         final Date albertEinsteinDeathDate;
         final Date albertEinsteinAccountOpenedDate;
@@ -43,8 +45,8 @@ public class Main
         final int ALBERT_EINSTEIN_DEATH_MONTH; // month
         final int ALBERT_EINSTEIN_DEATH_YEAR; // year
         // bank account
-        final String ALBERT_EINSTEIN_BANK_ACCOUNT_NUMBER; // account number
         final int ALBERT_EINSTEIN_BANK_PIN; // pin
+        final String ALBERT_EINSTEIN_BANK_ACCOUNT_NUMBER; // account number
         final int ALBERT_EINSTEIN_BANK_BALANCE_USD; // balance
         final int ALBERT_EINSTEIN_WITHDRAWAL_AMOUNT_USD; // withdrawal amount
         // date opened
@@ -55,7 +57,9 @@ public class Main
         final int ALBERT_EINSTEIN_ACCOUNT_CLOSED_DAY; // day
         final int ALBERT_EINSTEIN_ACCOUNT_CLOSED_MONTH; // month
         final int ALBERT_EINSTEIN_ACCOUNT_CLOSED_YEAR; // year
-
+        // Name
+        albertEinsteinFirstName = "Albert";
+        albertEinsteinLastName = "Einstein";
         // Birth Date
         ALBERT_EINSTEIN_BIRTH_DAY = 14; // day
         ALBERT_EINSTEIN_BIRTH_MONTH = 3; // month
@@ -97,7 +101,7 @@ public class Main
         albertEinsteinAccountClosedDate = new Date(ALBERT_EINSTEIN_ACCOUNT_CLOSED_YEAR, ALBERT_EINSTEIN_ACCOUNT_CLOSED_MONTH, ALBERT_EINSTEIN_ACCOUNT_CLOSED_DAY);
 
         // Name
-        albertEinsteinName = new Name("Albert", "Einstein");
+        albertEinsteinName = new Name(albertEinsteinFirstName, albertEinsteinLastName);
 
         // Person
         albertEinstein = new Person(albertEinsteinName, albertEinsteinBirthDate, albertEinsteinDeathDate);
@@ -133,6 +137,8 @@ public class Main
         // Withdraw $200
 
         // Nelson Mandela
+        final String nelsonMandelaFirstName = "Nelson";
+        final String nelsonMandelaLastName = "Mandela";
         // Birth Date
         final int NELSON_MANDELA_BIRTH_YEAR = 1918;
         final int NELSON_MANDELA_BIRTH_MONTH = 6;
@@ -164,7 +170,7 @@ public class Main
         Date NELSON_MANDELA_CLOSED_DATE = null;
 
         // Name
-        Name NelsonMandelaName = new Name("Nelson", "Mandela");
+        Name NelsonMandelaName = new Name(nelsonMandelaFirstName, nelsonMandelaLastName);
 
         // Person
         Person NelsonMandelaPerson = new Person(NelsonMandelaName, NelsonBirthDate, NelsonDeathDate);
@@ -197,6 +203,9 @@ public class Main
         // Withdraw $50
 
         // Frido Kahlo
+        final String fridoKahloFirstName = "Frido";
+        final String fridoKahloLastName = "Kahlo";
+
         // Birth Date
         final int FRIDO_KAHLO_BIRTH_YEAR = 1907;
         final int FRIDO_KAHLO_BIRTH_MONTH = 7;
@@ -233,7 +242,7 @@ public class Main
         Date fridoCloseDate = new Date(FRIDO_KAHLO_CLOSED_YEAR, FRIDO_KAHLO_CLOSED_MONTH, FRIDO_KAHLO_CLOSED_DAY);
 
         // Name
-        Name fridoKahloName = new Name("Frido", "Kahlo");
+        Name fridoKahloName = new Name(fridoKahloFirstName, fridoKahloLastName);
 
         // Person
         Person fridoKahloPerson = new Person(fridoKahloName, fridoBirthDate, fridoDeathDate);
@@ -262,6 +271,8 @@ public class Main
         // withdraw $500
 
         // Jackie Chan
+        final String jackieChanFirstName = "Jackie";
+        final String jackieChanLastName = "Chan";
         // Birthdate
         final int JACKIE_CHAN_BIRTH_YEAR = 1954;
         final int JACKIE_CHAN_BIRTH_MONTH = 4;
@@ -288,7 +299,7 @@ public class Main
         Date jackieCloseDate = null;
 
         // Name
-        Name jackieChanName = new Name("Jackie", "Chan");
+        Name jackieChanName = new Name(jackieChanFirstName, jackieChanLastName);
 
         // Person
         Person jackieChanPerson = new Person(jackieChanName, jackieBirthDate, jackieDeathDate);

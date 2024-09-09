@@ -85,7 +85,7 @@ public class BankAccount
         // String builder instantiation
         StringBuilder returnString = new StringBuilder();
         // add client full name, their current balance, account number, and date account opened
-        returnString.append(client.getName().getFullName() + " had $" + balanceUsd + " in account " + accountNumber + " which " + "they" + " opened on " + accountOpenedDate.getDayOfTheWeek() + " " + client.getMonthName(accountOpenedDate.getMonth()) + " " + accountOpenedDate.getDay() + ", " + accountOpenedDate.getYear());
+        returnString.append(client.getName().getFullName()).append(" had $").append(balanceUsd).append(" in account ").append(accountNumber).append(" which ").append("they").append(" opened on ").append(accountOpenedDate.getDayOfTheWeek()).append(" ").append(client.getMonthName(accountOpenedDate.getMonth())).append(" ").append(accountOpenedDate.getDay()).append(", ").append(accountOpenedDate.getYear());
 
         // if the account does not have a close date append it is still open
         if (accountClosedDate == null)
@@ -95,7 +95,7 @@ public class BankAccount
         // else append the date closed
         else
         {
-            returnString.append(" and closed " + accountClosedDate.getDayOfTheWeek() + " " + client.getMonthName(accountClosedDate.getMonth()) + " " + accountClosedDate.getDay() + ", " + accountClosedDate.getYear());
+            returnString.append(" and closed ").append(accountClosedDate.getDayOfTheWeek()).append(" ").append(client.getMonthName(accountClosedDate.getMonth())).append(" ").append(accountClosedDate.getDay()).append(", ").append(accountClosedDate.getYear());
         }
         // return the full string
         return returnString.toString();
