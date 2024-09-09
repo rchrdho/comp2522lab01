@@ -43,7 +43,6 @@ public class Person
      */
     public Person(final Name name, final Date birthDate, final Date deathDate)
     {
-        // initialize variables
         this.name = name;
         this.birthDate = birthDate;
         this.deathDate = deathDate;
@@ -59,7 +58,7 @@ public class Person
     public String getDetails()
     {
         // Builds a string based on whether the person is alive or dead
-        //Either alive, or dead, in which case it will provide the DAY(name), MONTH DAY(integer), YEAR
+        // Either alive, or dead, in which case it will provide the DAY(name), MONTH DAY(integer), YEAR
         final String status = (deathDate == null) ? ALIVE_STATUS : DEATH_STATUS + " " + deathDate.getDayOfTheWeek() + "," + " " + this.getMonthName(deathDate.getMonth()) + " " + deathDate.getDay() + ", " + deathDate.getYear();
 
         // Concatenates the person's current dead or alive status with the person's birth date
@@ -108,9 +107,9 @@ public class Person
     }
 
     /**
-     * Getter for the name object
+     * Accessor for Name.
      *
-     * @return name object
+     * @return name
      */
     public Name getName()
     {
@@ -118,9 +117,9 @@ public class Person
     }
 
     /**
-     * Getter for birthday Date object
+     * Accessor for Birthdate
      *
-     * @return birthDate object
+     * @return birthDate
      */
     public Date getBirthDate()
     {
@@ -128,9 +127,9 @@ public class Person
     }
 
     /**
-     * Getter for death date Date object
+     * Accessor for Death date.
      *
-     * @return deathDate object
+     * @return deadDate
      */
     public Date getDeathDate()
     {
