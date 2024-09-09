@@ -23,24 +23,24 @@ public class Main
         final Date albertEinsteinAccountClosedDate;
         final BankClient albertEinsteinBankClient;
         final BankAccount albertEinsteinBankAccount;
-
-        final int ALBERT_EINSTEIN_BIRTH_YEAR;
-        final int ALBERT_EINSTEIN_BIRTH_MONTH;
-        final int ALBERT_EINSTEIN_BIRTH_DAY;
-
-        final int ALBERT_EINSTEIN_DEATH_YEAR;
-        final int ALBERT_EINSTEIN_DEATH_MONTH;
-        final int ALBERT_EINSTEIN_DEATH_DAY;
-
+        // birthday
+        final int ALBERT_EINSTEIN_BIRTH_DAY; // day
+        final int ALBERT_EINSTEIN_BIRTH_MONTH; // month
+        final int ALBERT_EINSTEIN_BIRTH_YEAR; // year
+        // deathday
+        final int ALBERT_EINSTEIN_DEATH_DAY; // day
+        final int ALBERT_EINSTEIN_DEATH_MONTH; // month
+        final int ALBERT_EINSTEIN_DEATH_YEAR; // year
+        // bank account
         final String ALBERT_EINSTEIN_BANK_ACCOUNT_NUMBER;
         final int ALBERT_EINSTEIN_BANK_PIN;
         final int ALBERT_EINSTEIN_BANK_BALANCE_USD;
         final int ALBERT_EINSTEIN_WITHDRAWAL_AMOUNT_USD;
-
+        // date opened
         final int ALBERT_EINSTEIN_ACCOUNT_OPENED_DAY;
         final int ALBERT_EINSTEIN_ACCOUNT_OPENED_MONTH;
         final int ALBERT_EINSTEIN_ACCOUNT_OPENED_YEAR;
-
+        // date closed
         final int ALBERT_EINSTEIN_ACCOUNT_CLOSED_DAY;
         final int ALBERT_EINSTEIN_ACCOUNT_CLOSED_MONTH;
         final int ALBERT_EINSTEIN_ACCOUNT_CLOSED_YEAR;
