@@ -43,18 +43,18 @@ public class Main
         final int ALBERT_EINSTEIN_DEATH_MONTH; // month
         final int ALBERT_EINSTEIN_DEATH_YEAR; // year
         // bank account
-        final String ALBERT_EINSTEIN_BANK_ACCOUNT_NUMBER;
-        final int ALBERT_EINSTEIN_BANK_PIN;
-        final int ALBERT_EINSTEIN_BANK_BALANCE_USD;
-        final int ALBERT_EINSTEIN_WITHDRAWAL_AMOUNT_USD;
+        final String ALBERT_EINSTEIN_BANK_ACCOUNT_NUMBER; // account number
+        final int ALBERT_EINSTEIN_BANK_PIN; // pin
+        final int ALBERT_EINSTEIN_BANK_BALANCE_USD; // balance
+        final int ALBERT_EINSTEIN_WITHDRAWAL_AMOUNT_USD; // withdrawal amount
         // date opened
-        final int ALBERT_EINSTEIN_ACCOUNT_OPENED_DAY;
-        final int ALBERT_EINSTEIN_ACCOUNT_OPENED_MONTH;
-        final int ALBERT_EINSTEIN_ACCOUNT_OPENED_YEAR;
+        final int ALBERT_EINSTEIN_ACCOUNT_OPENED_DAY; // day
+        final int ALBERT_EINSTEIN_ACCOUNT_OPENED_MONTH; // month
+        final int ALBERT_EINSTEIN_ACCOUNT_OPENED_YEAR; // year
         // date closed
-        final int ALBERT_EINSTEIN_ACCOUNT_CLOSED_DAY;
-        final int ALBERT_EINSTEIN_ACCOUNT_CLOSED_MONTH;
-        final int ALBERT_EINSTEIN_ACCOUNT_CLOSED_YEAR;
+        final int ALBERT_EINSTEIN_ACCOUNT_CLOSED_DAY; // day
+        final int ALBERT_EINSTEIN_ACCOUNT_CLOSED_MONTH; // month
+        final int ALBERT_EINSTEIN_ACCOUNT_CLOSED_YEAR; // year
 
         // Birth Date
         ALBERT_EINSTEIN_BIRTH_DAY = 14; // day
