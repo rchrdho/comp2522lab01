@@ -139,6 +139,7 @@ public class Main
         // Nelson Mandela
         final String nelsonMandelaFirstName = "Nelson";
         final String nelsonMandelaLastName = "Mandela";
+        
         // Birth Date
         final int NELSON_MANDELA_BIRTH_YEAR = 1918;
         final int NELSON_MANDELA_BIRTH_MONTH = 6;
@@ -164,38 +165,38 @@ public class Main
         final String NELSON_MANDELA_ACCOUNT_NUM = "654321";
 
         // Dates
-        Date NelsonBirthDate = new Date(NELSON_MANDELA_BIRTH_YEAR, NELSON_MANDELA_BIRTH_MONTH, NELSON_MANDELA_BIRTH_DAY);
-        Date NelsonDeathDate = new Date(NELSON_MANDELA_DEATH_YEAR, NELSON_MANDELA_DEATH_MONTH, NELSON_MANDELA_DEATH_DAY);
-        Date NelsonSignupDate = new Date(NELSON_MANDELA_SIGNUP_YEAR, NELSON_MANDELA_SIGNUP_MONTH, NELSON_MANDELA_SIGNUP_DAY);
+        Date nelsonMandelaBirthDate = new Date(NELSON_MANDELA_BIRTH_YEAR, NELSON_MANDELA_BIRTH_MONTH, NELSON_MANDELA_BIRTH_DAY);
+        Date nelsonMandelaDeathDate = new Date(NELSON_MANDELA_DEATH_YEAR, NELSON_MANDELA_DEATH_MONTH, NELSON_MANDELA_DEATH_DAY);
+        Date nelsonMandelaSignupDate = new Date(NELSON_MANDELA_SIGNUP_YEAR, NELSON_MANDELA_SIGNUP_MONTH, NELSON_MANDELA_SIGNUP_DAY);
         Date NELSON_MANDELA_CLOSED_DATE = null;
 
         // Name
-        Name NelsonMandelaName = new Name(nelsonMandelaFirstName, nelsonMandelaLastName);
+        Name nelsonMandelaName = new Name(nelsonMandelaFirstName, nelsonMandelaLastName);
 
         // Person
-        Person NelsonMandelaPerson = new Person(NelsonMandelaName, NelsonBirthDate, NelsonDeathDate);
+        Person nelsonMandelaPerson = new Person(nelsonMandelaName, nelsonMandelaBirthDate, nelsonMandelaDeathDate);
 
-        BankClient NelsonBankClient = new BankClient(NelsonSignupDate, NELSON_MANDELA_CLIENTID, NelsonMandelaPerson);
+        BankClient nelsonBankClient = new BankClient(nelsonMandelaSignupDate, NELSON_MANDELA_CLIENTID, nelsonMandelaPerson);
 
-        BankAccount NelsonBankAccount = new BankAccount(NelsonBankClient, NELSON_MANDELA_ACCOUNT_NUM, NELSON_MANDELA_BANK_PIN, NELSON_MANDELA_BANK_BALANCE, NelsonSignupDate, NELSON_MANDELA_CLOSED_DATE);
+        BankAccount nelsonMandelaBankAccount = new BankAccount(nelsonBankClient, NELSON_MANDELA_ACCOUNT_NUM, NELSON_MANDELA_BANK_PIN, NELSON_MANDELA_BANK_BALANCE, nelsonMandelaSignupDate, NELSON_MANDELA_CLOSED_DATE);
 
         // print initials
-        System.out.println(NelsonMandelaName.getInitials());
+        System.out.println(nelsonMandelaName.getInitials());
 
         // print full name
-        System.out.println(NelsonMandelaName.getFullName());
+        System.out.println(nelsonMandelaName.getFullName());
 
         // print reversedName
-        System.out.println(NelsonMandelaName.getReverseName());
+        System.out.println(nelsonMandelaName.getReverseName());
 
         // print person details
-        System.out.println(NelsonMandelaPerson.getDetails());
+        System.out.println(nelsonMandelaPerson.getDetails());
 
         // print bank account details
-        System.out.println(NelsonBankAccount.getDetails());
+        System.out.println(nelsonMandelaBankAccount.getDetails());
 
         // withdraw $200
-        NelsonBankAccount.withdraw(NELSON_MANDELA_WITHDRAWAL_AMOUNT);
+        nelsonMandelaBankAccount.withdraw(NELSON_MANDELA_WITHDRAWAL_AMOUNT);
         // person object Frido Kahlo (July 6, 1907 - July 13, 1954)
         // BankAccount #frd123: signed up January 1, 1940 and closed July 13, 1954
         // pin 1907
@@ -236,19 +237,19 @@ public class Main
         final String FRIDO_KAHLO_ACCOUNT_NUM = "frd123";
 
         // Dates
-        Date fridoBirthDate = new Date(FRIDO_KAHLO_BIRTH_YEAR, FRIDO_KAHLO_BIRTH_MONTH, FRIDO_KAHLO_BIRTH_DAY);
-        Date fridoDeathDate = new Date(FRIDO_KAHLO_DEATH_YEAR, FRIDO_KAHLO_DEATH_MONTH, FRIDO_KAHLO_DEATH_DAY);
-        Date fridoSignupDate = new Date(FRIDO_KAHLO_SIGNUP_YEAR, FRIDO_KAHLO_SIGNUP_MONTH, FRIDO_KAHLO_SIGNUP_DAY);
-        Date fridoCloseDate = new Date(FRIDO_KAHLO_CLOSED_YEAR, FRIDO_KAHLO_CLOSED_MONTH, FRIDO_KAHLO_CLOSED_DAY);
+        Date fridoKahloBirthDate = new Date(FRIDO_KAHLO_BIRTH_YEAR, FRIDO_KAHLO_BIRTH_MONTH, FRIDO_KAHLO_BIRTH_DAY);
+        Date fridoKahloDeathDate = new Date(FRIDO_KAHLO_DEATH_YEAR, FRIDO_KAHLO_DEATH_MONTH, FRIDO_KAHLO_DEATH_DAY);
+        Date fridoKahloSignupDate = new Date(FRIDO_KAHLO_SIGNUP_YEAR, FRIDO_KAHLO_SIGNUP_MONTH, FRIDO_KAHLO_SIGNUP_DAY);
+        Date fridoKahloCloseDate = new Date(FRIDO_KAHLO_CLOSED_YEAR, FRIDO_KAHLO_CLOSED_MONTH, FRIDO_KAHLO_CLOSED_DAY);
 
         // Name
         Name fridoKahloName = new Name(fridoKahloFirstName, fridoKahloLastName);
 
         // Person
-        Person fridoKahloPerson = new Person(fridoKahloName, fridoBirthDate, fridoDeathDate);
+        Person fridoKahloPerson = new Person(fridoKahloName, fridoKahloBirthDate, fridoKahloDeathDate);
 
-        BankClient fridoBankClient = new BankClient(fridoSignupDate, FRIDO_KAHLO_CLIENTID, fridoKahloPerson);
-        BankAccount fridoBankAccount = new BankAccount(fridoBankClient, FRIDO_KAHLO_ACCOUNT_NUM, FRIDO_KAHLO_BANK_PIN, FRIDO_KAHLO_BANK_BALANCE, fridoSignupDate, fridoCloseDate);
+        BankClient fridoBankClient = new BankClient(fridoKahloSignupDate, FRIDO_KAHLO_CLIENTID, fridoKahloPerson);
+        BankAccount fridoBankAccount = new BankAccount(fridoBankClient, FRIDO_KAHLO_ACCOUNT_NUM, FRIDO_KAHLO_BANK_PIN, FRIDO_KAHLO_BANK_BALANCE, fridoKahloSignupDate, fridoKahloCloseDate);
         // print initials
         System.out.println(fridoKahloName.getInitials());
 
@@ -293,19 +294,19 @@ public class Main
         final int JACKIE_CHAN_BANK_WITHDRAW = 500;
 
         // Dates
-        Date jackieBirthDate = new Date(JACKIE_CHAN_BIRTH_YEAR, JACKIE_CHAN_BIRTH_MONTH, JACKIE_CHAN_BIRTH_DAY);
-        Date jackieSignupDate = new Date(JACKIE_CHAN_SIGNUP_YEAR, JACKIE_CHAN_SIGNUP_MONTH, JACKIE_CHAN_SIGNUP_DAY);
-        Date jackieDeathDate = null;
-        Date jackieCloseDate = null;
+        Date jackieChanBirthDate = new Date(JACKIE_CHAN_BIRTH_YEAR, JACKIE_CHAN_BIRTH_MONTH, JACKIE_CHAN_BIRTH_DAY);
+        Date jackieChanSignupDate = new Date(JACKIE_CHAN_SIGNUP_YEAR, JACKIE_CHAN_SIGNUP_MONTH, JACKIE_CHAN_SIGNUP_DAY);
+        Date jackieChanDeathDate = null;
+        Date jackieChanCloseDate = null;
 
         // Name
         Name jackieChanName = new Name(jackieChanFirstName, jackieChanLastName);
 
         // Person
-        Person jackieChanPerson = new Person(jackieChanName, jackieBirthDate, jackieDeathDate);
+        Person jackieChanPerson = new Person(jackieChanName, jackieChanBirthDate, jackieChanDeathDate);
 
-        BankClient jackieBankClient = new BankClient(jackieSignupDate, JACKIE_CHAN_CLIENTID, jackieChanPerson);
-        BankAccount jackieBankAccount = new BankAccount(jackieBankClient, JACKIE_CHAN_ACCOUNT_NUM, JACKIE_CHAN_BANK_PIN, JACKIE_CHAN_BANK_BALANCE, jackieSignupDate, jackieCloseDate);
+        BankClient jackieChanBankClient = new BankClient(jackieChanSignupDate, JACKIE_CHAN_CLIENTID, jackieChanPerson);
+        BankAccount jackieChanBankAccount = new BankAccount(jackieChanBankClient, JACKIE_CHAN_ACCOUNT_NUM, JACKIE_CHAN_BANK_PIN, JACKIE_CHAN_BANK_BALANCE, jackieChanSignupDate, jackieChanCloseDate);
 
         // Print initials
         System.out.println(jackieChanName.getInitials());
@@ -317,9 +318,9 @@ public class Main
         System.out.println(jackieChanName.getReverseName());
 
         // Print Bank account details
-        System.out.println(jackieBankAccount.getDetails());
+        System.out.println(jackieChanBankAccount.getDetails());
 
         // Withdraw
-        jackieBankAccount.withdraw(JACKIE_CHAN_BANK_WITHDRAW, JACKIE_CHAN_BANK_PIN);
+        jackieChanBankAccount.withdraw(JACKIE_CHAN_BANK_WITHDRAW, JACKIE_CHAN_BANK_PIN);
     }
 }

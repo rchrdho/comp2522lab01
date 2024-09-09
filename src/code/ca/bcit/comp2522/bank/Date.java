@@ -112,9 +112,9 @@ public class Date
     private static void validateDay(final int day, final int month, final int year)
     {
         // get days in month based on which month it is
-        final int maxDay = getMaxDaysInMonth(month, year);
+        final int daysInTheMonth = getMaxDaysInMonth(month, year);
         // if day is less than minimum number of days or maximum number of days throw illegal argument exception
-        if (day < MIN_NUM_DAYS || day > maxDay)
+        if (day < MIN_NUM_DAYS || day > daysInTheMonth)
         {
             throw new IllegalArgumentException("Invalid day entry: " + day);
         }
@@ -193,7 +193,7 @@ public class Date
     public String getYYYYMMDD()
     {
         final String fullDate;
-        
+
         fullDate = String.format("%04d-%02d-%02d", year, month, day);
         return fullDate;
     }
@@ -265,10 +265,12 @@ public class Date
      */
     private static int getCenturyOffset(final int year)
     {
+        // year is greater than or equal to 2000 return 6
         if (year >= TWO_THOUSANDS)
         {
             return SIX;
         }
+        // else if year is less than 1900 return 2
         else if (year < NINETEEN_HUNDREDS)
         {
             return TWO;

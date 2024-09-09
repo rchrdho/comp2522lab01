@@ -25,11 +25,11 @@ public class BankClient extends Person
     /**
      * Minimum length that a clientID may be
      */
-    private static final int MIN_CLIENTID_LENGTH = 6;
+    private static final int MIN_CLIENTID_CHARACTER_LENGTH = 6;
     /**
      * Maximum length that a clientID may be
      */
-    private static final int MAX_CLIENTID_LENGTH = 7;
+    private static final int MAX_CLIENTID_CHARACTER_LENGTH = 7;
 
     /**
      * Constructor for BankClient.
@@ -70,7 +70,7 @@ public class BankClient extends Person
     {
         // if client id length is less than the minimum client id length or longer than the maximum length throw
         // illegal argument exception
-        if (clientID.length() < MIN_CLIENTID_LENGTH || clientID.length() > MAX_CLIENTID_LENGTH)
+        if (clientID.length() < MIN_CLIENTID_CHARACTER_LENGTH || clientID.length() > MAX_CLIENTID_CHARACTER_LENGTH)
         {
             throw new IllegalArgumentException("Invalid Client ID");
         }

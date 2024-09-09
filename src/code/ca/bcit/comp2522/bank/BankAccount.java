@@ -44,25 +44,26 @@ public class BankAccount
     /**
      * Withdraws the given amount USD from the clients bank account
      *
-     * @param amountUsd Amount to withdraw from account
+     * @param amountToWithdrawUsd Amount to withdraw from account
      */
-    public void withdraw(final double amountUsd)
+    public void withdraw(final double amountToWithdrawUsd)
     {
         // subtract the given amount from the current balance
-        balanceUsd -= amountUsd;
-        System.out.println("-" + amountUsd + " Withdrawn\nNew Balance: " + balanceUsd + "\n"); // print the transaction
+        balanceUsd -= amountToWithdrawUsd;
+        System.out.println("-" + amountToWithdrawUsd + " Withdrawn\nNew Balance: " + balanceUsd + "\n"); // print the
+        // transaction
     }
 
     /**
      * Withdraws the given amount USD from the clients bank account
      * Requires that a pin be input to verify transaction
      *
-     * @param amountUsd  Amount to withdraw from account
-     * @param pinToMatch The clients pin
+     * @param amountToWithdrawUsd Amount to withdraw from account
+     * @param pinToMatch          The clients pin
      *
      * @throws IllegalArgumentException Invalid pin if pin does not match
      */
-    public void withdraw(final double amountUsd, final int pinToMatch)
+    public void withdraw(final double amountToWithdrawUsd, final int pinToMatch)
     {
         // if pin does not match the recorded pin throw illegal argument exception
         if (pinToMatch != pin)
@@ -70,8 +71,8 @@ public class BankAccount
             throw new IllegalArgumentException("Invalid pin");
         }
         // subtract amount given from current balance
-        balanceUsd -= amountUsd;
-        System.out.println("-" + amountUsd + " Withdrawn\nNew Balance: " + balanceUsd);
+        balanceUsd -= amountToWithdrawUsd;
+        System.out.println("-" + amountToWithdrawUsd + " Withdrawn\nNew Balance: " + balanceUsd);
     }
 
     /**
