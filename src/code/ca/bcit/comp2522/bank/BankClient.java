@@ -30,8 +30,10 @@ public class BankClient extends Person
      */
     public BankClient(final Date signupDate, final String clientID, final Person person)
     {
+        // Person object constructor call
         super(person.getName(), person.getBirthDate(), person.getDeathDate());
 
+        // validate client id length and assign variables
         validateClientID(clientID);
         this.signupDate = signupDate;
         this.clientID = clientID;
@@ -55,6 +57,8 @@ public class BankClient extends Person
      */
     private void validateClientID(String clientID)
     {
+        // if client id length is less than the minimum client id length or longer than the maximum length throw
+        // illegal argument exception
         if (clientID.length() < MIN_CLIENTID_LENGTH || clientID.length() > MAX_CLIENTID_LENGTH)
         {
             throw new IllegalArgumentException("Invalid Client ID");

@@ -43,6 +43,7 @@ public class Person
      */
     public Person(final Name name, final Date birthDate, final Date deathDate)
     {
+        // initialize variables
         this.name = name;
         this.birthDate = birthDate;
         this.deathDate = deathDate;
@@ -106,16 +107,31 @@ public class Person
         }
     }
 
+    /**
+     * Getter for the name object
+     *
+     * @return name object
+     */
     public Name getName()
     {
         return name;
     }
 
+    /**
+     * Getter for birthday Date object
+     *
+     * @return birthDate object
+     */
     public Date getBirthDate()
     {
         return birthDate;
     }
 
+    /**
+     * Getter for death date Date object
+     *
+     * @return deathDate object
+     */
     public Date getDeathDate()
     {
         return deathDate;

@@ -12,10 +12,10 @@ public class BankAccount
 
     public BankAccount(final BankClient client, final String accountNumber, final int pin, final int balanceUsd, final Date accountOpenedDate, final Date accountClosedDate)
     {
+        // assign variables
         this.client = client;
         this.accountNumber = accountNumber;
         this.pin = pin;
-
         this.accountOpenedDate = accountOpenedDate;
         this.accountClosedDate = accountClosedDate;
         this.balanceUsd = balanceUsd;
@@ -28,8 +28,9 @@ public class BankAccount
      */
     public void withdraw(final double amountUsd)
     {
+        // subtract the given amount from the current balance
         balanceUsd -= amountUsd;
-        System.out.println("-" + amountUsd + " Withdrawn\nNew Balance: " + balanceUsd);
+        System.out.println("-" + amountUsd + " Withdrawn\nNew Balance: " + balanceUsd + "\n"); // print the transaction
     }
 
     /**
@@ -41,10 +42,12 @@ public class BankAccount
      */
     public void withdraw(final double amountUsd, final int pinToMatch)
     {
+        // if pin does not match the recorded pin throw illegal argument exception
         if (pinToMatch != pin)
         {
             throw new IllegalArgumentException("Invalid pin");
         }
+        // subtract amount given from current balance
         balanceUsd -= amountUsd;
         System.out.println("-" + amountUsd + " Withdrawn\nNew Balance: " + balanceUsd);
     }
@@ -57,17 +60,22 @@ public class BankAccount
      */
     public String getDetails()
     {
+        // String builder instantiation
         StringBuilder returnString = new StringBuilder();
+        // add client full name, their current balance, account number, and date account opened
         returnString.append(client.getName().getFullName() + " had $" + balanceUsd + " in account " + accountNumber + " which " + "they" + " opened on " + accountOpenedDate.getDayOfTheWeek() + " " + client.getMonthName(accountOpenedDate.getMonth()) + " " + accountOpenedDate.getDay() + ", " + accountOpenedDate.getYear());
 
+        // if the account does not have a close date append it is still open
         if (accountClosedDate == null)
         {
             returnString.append(" and is still open");
         }
+        // else append the date closed
         else
         {
             returnString.append(" and closed " + accountClosedDate.getDayOfTheWeek() + " " + client.getMonthName(accountClosedDate.getMonth()) + " " + accountClosedDate.getDay() + ", " + accountClosedDate.getYear());
         }
+        // return the full string
         return returnString.toString();
     }
 

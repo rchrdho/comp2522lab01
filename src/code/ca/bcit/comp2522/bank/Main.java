@@ -14,46 +14,88 @@ public class Main
         // balance $1000
 
         // Albert Einstein
-        // Death Date
-        final int ALBERT_EINSTEIN_BIRTH_YEAR = 1879;
-        final int ALBERT_EINSTEIN_BIRTH_MONTH = 3;
-        final int ALBERT_EINSTEIN_BIRTH_DAY = 14;
-        Date albertEinsteinBirthDate = new Date(ALBERT_EINSTEIN_BIRTH_YEAR, ALBERT_EINSTEIN_BIRTH_MONTH, ALBERT_EINSTEIN_BIRTH_DAY);
-        // Death Date
-        final int ALBERT_EINSTEIN_DEATH_YEAR = 1955;
-        final int ALBERT_EINSTEIN_DEATH_MONTH = 4;
-        final int ALBERT_EINSTEIN_DEATH_DAY = 18;
-        Date albertEinsteinDeathDate = new Date(ALBERT_EINSTEIN_DEATH_YEAR, ALBERT_EINSTEIN_DEATH_MONTH, ALBERT_EINSTEIN_DEATH_DAY);
+        // VARIABLES
+        final Person albertEinstein;
+        final Name albertEinsteinName;
+        final Date albertEinsteinBirthDate;
+        final Date albertEinsteinDeathDate;
+        final Date albertEinsteinAccountOpenedDate;
+        final Date albertEinsteinAccountClosedDate;
+        final BankClient albertEinsteinBankClient;
+        final BankAccount albertEinsteinBankAccount;
 
-        // Name
-        Name albertEinsteinName = new Name("Albert", "Einstein");
+        final int ALBERT_EINSTEIN_BIRTH_YEAR;
+        final int ALBERT_EINSTEIN_BIRTH_MONTH;
+        final int ALBERT_EINSTEIN_BIRTH_DAY;
 
-        // Person
-        Person albertEinstein = new Person(albertEinsteinName, albertEinsteinBirthDate, albertEinsteinDeathDate);
+        final int ALBERT_EINSTEIN_DEATH_YEAR;
+        final int ALBERT_EINSTEIN_DEATH_MONTH;
+        final int ALBERT_EINSTEIN_DEATH_DAY;
+
+        final String ALBERT_EINSTEIN_BANK_ACCOUNT_NUMBER;
+        final int ALBERT_EINSTEIN_BANK_PIN;
+        final int ALBERT_EINSTEIN_BANK_BALANCE_USD;
+        final int ALBERT_EINSTEIN_WITHDRAWAL_AMOUNT_USD;
+
+        final int ALBERT_EINSTEIN_ACCOUNT_OPENED_DAY;
+        final int ALBERT_EINSTEIN_ACCOUNT_OPENED_MONTH;
+        final int ALBERT_EINSTEIN_ACCOUNT_OPENED_YEAR;
+
+        final int ALBERT_EINSTEIN_ACCOUNT_CLOSED_DAY;
+        final int ALBERT_EINSTEIN_ACCOUNT_CLOSED_MONTH;
+        final int ALBERT_EINSTEIN_ACCOUNT_CLOSED_YEAR;
+
+        // Birth Date
+        ALBERT_EINSTEIN_BIRTH_DAY = 14; // day
+        ALBERT_EINSTEIN_BIRTH_MONTH = 3; // month
+        ALBERT_EINSTEIN_BIRTH_YEAR = 1879; // year
+
+        // Death Date
+        ALBERT_EINSTEIN_DEATH_DAY = 18; // day
+        ALBERT_EINSTEIN_DEATH_MONTH = 4; // month
+        ALBERT_EINSTEIN_DEATH_YEAR = 1955; // year
 
         // Bank Account
-        final String ALBERT_EINSTEIN_BANK_ACCOUNT_NUMBER = "#abc123"; // account number
-        final int ALBERT_EINSTEIN_BANK_PIN = 3141; // pin
+        ALBERT_EINSTEIN_BANK_ACCOUNT_NUMBER = "#abc123"; // account number
+        ALBERT_EINSTEIN_BANK_PIN = 3141; // pin
 
         // Balance
-        final int ALBERT_EINSTEIN_BANK_BALANCE = 1000; // dollars
-        final int ALBERT_EINSTEIN_WITHDRAWL_AMOUNT = 100; // dollars
+        ALBERT_EINSTEIN_BANK_BALANCE_USD = 1000; // dollars
+        ALBERT_EINSTEIN_WITHDRAWAL_AMOUNT_USD = 100; // dollars
 
         // Date Opened
-        final int ALBERT_EINSTEIN_ACCOUNT_OPENED_DAY = 1; // day
-        final int ALBERT_EINSTEIN_ACCOUNT_OPENED_MONTH = 1; // month
-        final int ALBERT_EINSTEIN_ACCOUNT_OPENED_YEAR = 1900; // year
-        Date albertEinsteinAccountOpenedDate = new Date(ALBERT_EINSTEIN_ACCOUNT_OPENED_YEAR, ALBERT_EINSTEIN_ACCOUNT_OPENED_MONTH, ALBERT_EINSTEIN_ACCOUNT_OPENED_DAY);
+        ALBERT_EINSTEIN_ACCOUNT_OPENED_DAY = 1; // day
+        ALBERT_EINSTEIN_ACCOUNT_OPENED_MONTH = 1; // month
+        ALBERT_EINSTEIN_ACCOUNT_OPENED_YEAR = 1900; // year
 
         // Date Closed
-        final int ALBERT_EINSTEIN_ACCOUNT_CLOSED_DAY = 14; // day
-        final int ALBERT_EINSTEIN_ACCOUNT_CLOSED_MONTH = 8; // month
-        final int ALBERT_EINSTEIN_ACCOUNT_CLOSED_YEAR = 1950; // year
-        Date albertEinsteinAccountClosedDate = new Date(ALBERT_EINSTEIN_ACCOUNT_CLOSED_YEAR, ALBERT_EINSTEIN_ACCOUNT_CLOSED_MONTH, ALBERT_EINSTEIN_ACCOUNT_CLOSED_DAY);
+        ALBERT_EINSTEIN_ACCOUNT_CLOSED_DAY = 14; // day
+        ALBERT_EINSTEIN_ACCOUNT_CLOSED_MONTH = 8; // month
+        ALBERT_EINSTEIN_ACCOUNT_CLOSED_YEAR = 1950; // year
 
-        BankClient albertEinsteinBankClient = new BankClient(albertEinsteinAccountOpenedDate, ALBERT_EINSTEIN_BANK_ACCOUNT_NUMBER, albertEinstein);
+        // OBJECTS
 
-        BankAccount albertEinsteinBankAccount = new BankAccount(albertEinsteinBankClient, ALBERT_EINSTEIN_BANK_ACCOUNT_NUMBER, ALBERT_EINSTEIN_BANK_PIN, ALBERT_EINSTEIN_BANK_BALANCE, albertEinsteinAccountOpenedDate, albertEinsteinAccountClosedDate);
+        // Dates
+        // birth date
+        albertEinsteinBirthDate = new Date(ALBERT_EINSTEIN_BIRTH_YEAR, ALBERT_EINSTEIN_BIRTH_MONTH, ALBERT_EINSTEIN_BIRTH_DAY);
+        // death date
+        albertEinsteinDeathDate = new Date(ALBERT_EINSTEIN_DEATH_YEAR, ALBERT_EINSTEIN_DEATH_MONTH, ALBERT_EINSTEIN_DEATH_DAY);
+        // account open date
+        albertEinsteinAccountOpenedDate = new Date(ALBERT_EINSTEIN_ACCOUNT_OPENED_YEAR, ALBERT_EINSTEIN_ACCOUNT_OPENED_MONTH, ALBERT_EINSTEIN_ACCOUNT_OPENED_DAY);
+        // account close date
+        albertEinsteinAccountClosedDate = new Date(ALBERT_EINSTEIN_ACCOUNT_CLOSED_YEAR, ALBERT_EINSTEIN_ACCOUNT_CLOSED_MONTH, ALBERT_EINSTEIN_ACCOUNT_CLOSED_DAY);
+
+        // Name
+        albertEinsteinName = new Name("Albert", "Einstein");
+
+        // Person
+        albertEinstein = new Person(albertEinsteinName, albertEinsteinBirthDate, albertEinsteinDeathDate);
+
+        // Bank Client
+        albertEinsteinBankClient = new BankClient(albertEinsteinAccountOpenedDate, ALBERT_EINSTEIN_BANK_ACCOUNT_NUMBER, albertEinstein);
+
+        //Bank account
+        albertEinsteinBankAccount = new BankAccount(albertEinsteinBankClient, ALBERT_EINSTEIN_BANK_ACCOUNT_NUMBER, ALBERT_EINSTEIN_BANK_PIN, ALBERT_EINSTEIN_BANK_BALANCE_USD, albertEinsteinAccountOpenedDate, albertEinsteinAccountClosedDate);
 
         // print initials
         System.out.println(albertEinstein.getName().getInitials());
@@ -71,60 +113,7 @@ public class Main
         System.out.println(albertEinsteinBankAccount.getDetails());
 
         // withdraw $100
-        albertEinsteinBankAccount.withdraw(ALBERT_EINSTEIN_WITHDRAWL_AMOUNT);
-
-        // Nelson Mandela
-        // person object Nelson Mandela (July 18, 1918 - December 5, 2013)
-        // BankAccount #654321: signed up May 10, 1994 and is still open
-        // pin 4664
-        // balance $2000
-
-        // print initials
-
-        // print full name
-
-        // print reversed name
-
-        // print getDetails()
-
-        // print BankClient getDetails()
-
-        // withdraw $200
-
-        // Frido Kahlo
-        // person object Frido Kahlo (July 6, 1907 - July 13, 1954)
-        // BankAccount #frd123: signed up January 1, 1940 and closed July 13, 1954
-        // pin frd123
-
-        // print initials
-
-        // print full name
-
-        // print reversed name
-
-        // print getDetails()
-
-        // print BankClient getDetails()
-
-        // withdraw $50
-
-        // Jackie Chan
-        // person object Jackie Chan (April 7, 1954 - still alive)
-        // BankAccount #chan789: signed up October 1, 1980 and is still open
-        // pin chan789
-        // balance $3000
-
-        // print initials
-
-        // print full name
-
-        // print reversed name
-
-        // print getDetails()
-
-        // print BankClient getDetails()
-
-        // withdraw $500
+        albertEinsteinBankAccount.withdraw(ALBERT_EINSTEIN_WITHDRAWAL_AMOUNT_USD);
 
         final int NELSON_BIRTH_YEAR = 1918;
         final int NELSON_BIRTH_MONTH = 6;
@@ -140,7 +129,7 @@ public class Main
 
         final int NELSON_BANK_PIN = 4664;
         final int NELSON_BANK_BALANCE = 2000;
-        final int NELSON_WITHDRAWL_AMOUNT = 200;
+        final int NELSON_WITHDRAWAL_AMOUNT = 200;
 
         final String NELSON_CLIENTID = "NelsonM";
         final String NELSON_ACCOUNT_NUM = "654321";
@@ -153,7 +142,7 @@ public class Main
         Person NelsonMandelaPerson = new Person(NelsonMandelaName, NelsonBirthDate, NelsonDeathDate);
 
         BankClient NelsonBankClient = new BankClient(NelsonSignupDate, NELSON_CLIENTID, NelsonMandelaPerson);
-        BankAccount NelsonBankAccount = new BankAccount(NelsonBankClient, NELSON_ACCOUNT_NUM, NELSON_BANK_PIN, NELSON_BANK_BALANCE, NelsonSignupDate,null);
+        BankAccount NelsonBankAccount = new BankAccount(NelsonBankClient, NELSON_ACCOUNT_NUM, NELSON_BANK_PIN, NELSON_BANK_BALANCE, NelsonSignupDate, null);
 
         // print initials
         System.out.println(NelsonMandelaName.getInitials());
@@ -171,8 +160,7 @@ public class Main
         System.out.println(NelsonBankAccount.getDetails());
 
         // withdraw $200
-        NelsonBankAccount.withdraw(NELSON_WITHDRAWL_AMOUNT);
-
+        NelsonBankAccount.withdraw(NELSON_WITHDRAWAL_AMOUNT);
 
         // Frido Kahlo
         // person object Frido Kahlo (July 6, 1907 - July 13, 1954)
@@ -209,8 +197,8 @@ public class Main
         Name fridoKahloName = new Name("Frido", "Kahlo");
 
         Person fridoKahloPerson = new Person(fridoKahloName, fridoBirthDate, fridoDeathDate);
-        BankClient fridoBankClient = new BankClient(fridoSignupDate,FRIDO_CLIENTID, fridoKahloPerson);
-        BankAccount fridoBankAccount = new BankAccount(fridoBankClient, FRIDO_ACCOUNT_NUM, FRIDO_BANK_PIN, FRIDO_BANK_BALANCE, fridoSignupDate,fridoCloseDate);
+        BankClient fridoBankClient = new BankClient(fridoSignupDate, FRIDO_CLIENTID, fridoKahloPerson);
+        BankAccount fridoBankAccount = new BankAccount(fridoBankClient, FRIDO_ACCOUNT_NUM, FRIDO_BANK_PIN, FRIDO_BANK_BALANCE, fridoSignupDate, fridoCloseDate);
 
         System.out.println(fridoKahloName.getInitials());
         System.out.println(fridoKahloName.getFullName());
@@ -237,10 +225,10 @@ public class Main
         Date jackieSignupDate = new Date(JACKIE_SIGNUP_YEAR, JACKIE_SIGNUP_MONTH, JACKIE_SIGNUP_DAY);
 
         Name jackieChanName = new Name("Jackie", "Chan");
-        Person jackieChanPerson = new Person(jackieChanName,jackieBirthDate, null);
+        Person jackieChanPerson = new Person(jackieChanName, jackieBirthDate, null);
 
         BankClient jackieBankClient = new BankClient(jackieSignupDate, JACKIE_CLIENTID, jackieChanPerson);
-        BankAccount jackieBankAccount = new BankAccount(jackieBankClient, JACKIE_ACCOUNT_NUM, JACKIE_BANK_PIN, JACKIE_BANK_BALANCE, jackieSignupDate,null);
+        BankAccount jackieBankAccount = new BankAccount(jackieBankClient, JACKIE_ACCOUNT_NUM, JACKIE_BANK_PIN, JACKIE_BANK_BALANCE, jackieSignupDate, null);
 
         System.out.println(jackieChanName.getInitials());
         System.out.println(jackieChanName.getFullName());
