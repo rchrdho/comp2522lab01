@@ -30,7 +30,7 @@ public class BankAccount
      * @param accountOpenedDate a Date this person opened account
      * @param accountClosedDate a Date this person closed account
      */
-    public BankAccount(final BankClient client, final String accountNumber, final int pin, final int balanceUsd, final Date accountOpenedDate, final Date accountClosedDate)
+    public BankAccount(final BankClient client, final String accountNumber, final int pin, final double balanceUsd, final Date accountOpenedDate, final Date accountClosedDate)
     {
         // assign variables
         this.client = client;

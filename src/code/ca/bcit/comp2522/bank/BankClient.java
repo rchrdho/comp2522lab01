@@ -66,7 +66,7 @@ public class BankClient extends Person
      *
      * @throws IllegalArgumentException if ClientID is invalid
      */
-    private void validateClientID(String clientID)
+    private void validateClientID(final String clientID)
     {
         // if client id length is less than the minimum client id length or longer than the maximum length throw
         // illegal argument exception

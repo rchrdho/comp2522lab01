@@ -23,6 +23,7 @@ public class Name
     private static final int MAX_NAME_LENGTH_CHARS = 45;
     private static final int FIRST_CHAR = 0;
     private static final int SECOND_CHAR = 1;
+    private static final String ADMIN = "admin";
 
     /**
      * Constructor for the Name class.
@@ -47,7 +48,7 @@ public class Name
     private static void validateFirstName(final String first)
     {
         // if first is null, blank, or less than maximum length, throw exception
-        if (first == null || first.isBlank() || first.length() > MAX_NAME_LENGTH_CHARS || first.toLowerCase().contains("admin"))
+        if (first == null || first.isBlank() || first.length() > MAX_NAME_LENGTH_CHARS || first.equalsIgnoreCase(ADMIN))
         {
             throw new IllegalArgumentException("Invalid first name entry");
         }
@@ -56,7 +57,7 @@ public class Name
     private static void validateLastName(final String last)
     {
         // if last is null, blank, or less than maximum length, throw exception
-        if (last == null || last.isBlank() || last.length() > MAX_NAME_LENGTH_CHARS || last.toLowerCase().contains("admin"))
+        if (last == null || last.isBlank() || last.length() > MAX_NAME_LENGTH_CHARS || last.equalsIgnoreCase(ADMIN))
         {
             throw new IllegalArgumentException("Invalid last name entry");
         }
