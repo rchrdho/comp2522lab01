@@ -310,6 +310,8 @@ public class Main
         BankClient jackieChanBankClient = new BankClient(jackieChanSignupDate, JACKIE_CHAN_CLIENTID, jackieChanPerson);
         BankAccount jackieChanBankAccount = new BankAccount(jackieChanBankClient, JACKIE_CHAN_ACCOUNT_NUM, JACKIE_CHAN_BANK_PIN, JACKIE_CHAN_BANK_BALANCE, jackieChanSignupDate, jackieChanCloseDate);
 
+        System.out.println(jackieChanBankClient.getDetails());
+
         // Print initials
         System.out.println(jackieChanName.getInitials());
 

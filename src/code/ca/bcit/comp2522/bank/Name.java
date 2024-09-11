@@ -45,6 +45,9 @@ public class Name
         this.last = last;
     }
 
+    /*
+     * Validator method to check if firstname is within 45 characters, not "admin", null or blank
+     */
     private static void validateFirstName(final String first)
     {
         // if first is null, blank, or less than maximum length, throw exception
@@ -54,6 +57,9 @@ public class Name
         }
     }
 
+    /*
+     * Validator method to check if lastname is within 45 characters, not "admin", null or blank
+     */
     private static void validateLastName(final String last)
     {
         // if last is null, blank, or less than maximum length, throw exception

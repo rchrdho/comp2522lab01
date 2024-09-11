@@ -90,6 +90,9 @@ public class Date
         this.day = day;
     }
 
+    /*
+     * Validator method that checks if year is within the given range of years
+     */
     private static void validateYear(final int year)
     {
         // if year is less than minimum number of years or greater than current year throw illegal argument exception
@@ -99,6 +102,9 @@ public class Date
         }
     }
 
+    /*
+     * Validator method to check if month is within the range of max months in a year
+     */
     private static void validateMonth(final int month)
     {
         // if month is less than minimum number of month or greater than maximum number of months throw illegal
@@ -109,6 +115,10 @@ public class Date
         }
     }
 
+    /*
+     * validator method that checks if day is within the maximum amount of days in that month
+     * Also uses helper method to check maximum days in that year
+     */
     private static void validateDay(final int day, final int month, final int year)
     {
         // get days in month based on which month it is
@@ -142,7 +152,7 @@ public class Date
         }
     }
 
-    /**
+    /*
      * Conditional to return true if the calculated year is a leap year, false if not.
      * Calculation for this found off of Google
      *
@@ -260,8 +270,8 @@ public class Date
         }
     }
 
-    /**
-     * returns values that correlate to base year
+    /*
+     * returns values that correlate to base year. (base year being 18XX 19XX 20XX
      */
     private static int getCenturyOffset(final int year)
     {
@@ -278,7 +288,9 @@ public class Date
         return ZERO;
     }
 
-    // helper method that returns the month code
+    /*
+     * helper method that returns the month code
+     */
     private static int getMonthCode(final int month)
     {
         switch (month)
@@ -312,7 +324,11 @@ public class Date
         }
     }
 
-    // Test for public methods in Date Class
+    /**
+     * Main method used to test all methods made in Date Class.
+     *
+     * @param args unused
+     */
     public static void main(final String[] args)
     {
         Date date = new Date(1977, 10, 31);

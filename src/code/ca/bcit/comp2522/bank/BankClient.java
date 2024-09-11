@@ -12,21 +12,22 @@ package ca.bcit.comp2522.bank;
 public class BankClient extends Person
 {
 
-    /**
+    /*
      * Date that client signed up
      */
     private final Date signupDate;
 
-    /**
+    /*
      * Client ID; must be 6 or 7 digits long
      */
     private final String clientID;
 
-    /**
+    /*
      * Minimum length that a clientID may be
      */
     private static final int MIN_CLIENTID_CHARACTER_LENGTH = 6;
-    /**
+
+    /*
      * Maximum length that a clientID may be
      */
     private static final int MAX_CLIENTID_CHARACTER_LENGTH = 7;
@@ -59,7 +60,7 @@ public class BankClient extends Person
         return super.getDetails();
     }
 
-    /**
+    /*
      * Validates that the clientID is between 6 and 7 digits long
      *
      * @param clientID a String for ClientID
