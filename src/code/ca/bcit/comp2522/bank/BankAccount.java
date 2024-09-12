@@ -76,7 +76,7 @@ public class BankAccount
     }
 
     /**
-     * Gives the details of the client
+     * Gives the details of the client by statin the full name, date account opened, and close date if applicable
      *
      * @return NAME had BALANCE in account accountNumber which
      * he opened in DAY, MONTH DATE, YEAR and closed DAY, MONTH DATE, YEAR
@@ -85,10 +85,11 @@ public class BankAccount
     {
         // String builder instantiation
         StringBuilder returnString = new StringBuilder();
-        // add client full name, their current balance, account number, and date account opened
+
+        // append client full name, their current balance, account number, and date account opened
         returnString.append(client.getName().getFullName()).append(" had $").append(balanceUsd).append(" in account ").append(accountNumber).append(" which ").append("they").append(" opened on ").append(accountOpenedDate.getDayOfTheWeek()).append(" ").append(client.getMonthName(accountOpenedDate.getMonth())).append(" ").append(accountOpenedDate.getDay()).append(", ").append(accountOpenedDate.getYear());
 
-        // if the account does not have a close date append it is still open
+        // if the account does not have a close date append "it is still open"
         if (accountClosedDate == null)
         {
             returnString.append(" and is still open");

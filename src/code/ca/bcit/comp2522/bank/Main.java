@@ -46,8 +46,9 @@ public class Main
         final int ALBERT_EINSTEIN_DEATH_YEAR; // year
         // bank account
         final int ALBERT_EINSTEIN_BANK_PIN; // pin
-        final String ALBERT_EINSTEIN_BANK_ACCOUNT_NUMBER; // account number
+        final String ALBERT_EINSTEIN_CLIENTID; // client id
         final int ALBERT_EINSTEIN_BANK_BALANCE_USD; // balance
+        final String ALBERT_EINSTEIN_BANK_ACCOUNT_NUMBER; // account number
         final int ALBERT_EINSTEIN_WITHDRAWAL_AMOUNT_USD; // withdrawal amount
         // date opened
         final int ALBERT_EINSTEIN_ACCOUNT_OPENED_DAY; // day
@@ -71,7 +72,7 @@ public class Main
         ALBERT_EINSTEIN_DEATH_YEAR = 1955; // year
 
         // Bank Account
-        final String ALBERT_EINSTEIN_CLIENTID = "AlbertE";
+        ALBERT_EINSTEIN_CLIENTID = "AlbertE";
         ALBERT_EINSTEIN_BANK_ACCOUNT_NUMBER = "#abc123"; // account number
         ALBERT_EINSTEIN_BANK_PIN = 3141; // pin
 
