@@ -3,7 +3,7 @@ package ca.bcit.comp2522.bank;
 /**
  * BankAccount Class.
  * Provides Bank Client, Account Number, Pin, account balance, Date account opened,
- * and Date account closed[can be null]
+ * and Date account closed [can be null]
  * Has Methods to withdraw from bank balance.
  *
  * @author Jayden Hutchinson
@@ -15,10 +15,10 @@ public class BankAccount
     double balanceUsd;
 
     private final BankClient client;
-    private final String accountNumber;
-    private final Date accountOpenedDate;
-    private final Date accountClosedDate;
-    private final int pin;
+    private final String     accountNumber;
+    private final Date       accountOpenedDate;
+    private final Date       accountClosedDate;
+    private final int        pin;
 
     /**
      * Constructs the BankAccount object.
@@ -33,12 +33,12 @@ public class BankAccount
     public BankAccount(final BankClient client, final String accountNumber, final int pin, final double balanceUsd, final Date accountOpenedDate, final Date accountClosedDate)
     {
         // assign variables
-        this.client = client;
-        this.accountNumber = accountNumber;
-        this.pin = pin;
+        this.client            = client;
+        this.accountNumber     = accountNumber;
+        this.pin               = pin;
         this.accountOpenedDate = accountOpenedDate;
         this.accountClosedDate = accountClosedDate;
-        this.balanceUsd = balanceUsd;
+        this.balanceUsd        = balanceUsd;
     }
 
     /**
@@ -66,7 +66,7 @@ public class BankAccount
     public void withdraw(final double amountToWithdrawUsd, final int pinToMatch)
     {
         // if pin does not match the recorded pin throw illegal argument exception
-        if (pinToMatch != pin)
+        if(pinToMatch != pin)
         {
             throw new IllegalArgumentException("Invalid pin");
         }
@@ -76,7 +76,7 @@ public class BankAccount
     }
 
     /**
-     * Gives the details of the client by statin the full name, date account opened, and close date if applicable
+     * Gives the details of the client by stating the full name, date account opened, and close date if applicable
      *
      * @return NAME had BALANCE in account accountNumber which
      * he opened in DAY, MONTH DATE, YEAR and closed DAY, MONTH DATE, YEAR
@@ -90,7 +90,7 @@ public class BankAccount
         returnString.append(client.getName().getFullName()).append(" had $").append(balanceUsd).append(" in account ").append(accountNumber).append(" which ").append("they").append(" opened on ").append(accountOpenedDate.getDayOfTheWeek()).append(" ").append(client.getMonthName(accountOpenedDate.getMonth())).append(" ").append(accountOpenedDate.getDay()).append(", ").append(accountOpenedDate.getYear());
 
         // if the account does not have a close date append "it is still open"
-        if (accountClosedDate == null)
+        if(accountClosedDate == null)
         {
             returnString.append(" and is still open");
         }
