@@ -262,6 +262,9 @@ public class Main
         // print name reversed
         System.out.println(fridoKahloName.getReverseName());
 
+        // print client details
+        System.out.println(fridoBankClient.getDetails());
+
         // print bank account details
         System.out.println(fridoBankAccount.getDetails());
 
@@ -311,8 +314,6 @@ public class Main
         BankClient jackieChanBankClient = new BankClient(jackieChanSignupDate, JACKIE_CHAN_CLIENTID, jackieChanPerson);
         BankAccount jackieChanBankAccount = new BankAccount(jackieChanBankClient, JACKIE_CHAN_ACCOUNT_NUM, JACKIE_CHAN_BANK_PIN, JACKIE_CHAN_BANK_BALANCE, jackieChanSignupDate, jackieChanCloseDate);
 
-        System.out.println(jackieChanBankClient.getDetails());
-
         // Print initials
         System.out.println(jackieChanName.getInitials());
 
@@ -321,6 +322,9 @@ public class Main
 
         // Print name reversed
         System.out.println(jackieChanName.getReverseName());
+
+        // Print Client Details
+        System.out.println(jackieChanBankClient.getDetails());
 
         // Print Bank account details
         System.out.println(jackieChanBankAccount.getDetails());
