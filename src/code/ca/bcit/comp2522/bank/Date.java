@@ -74,7 +74,7 @@ public class Date
      * Constructs the date object.
      *
      * @param year  between 1 and current year
-     * @param month between 1 and 12
+     * @param month between JANUARY and DECEMBER
      * @param day   between 1 and max number of days for tht month
      */
     public Date(final int year, final int month, final int day)
@@ -85,9 +85,9 @@ public class Date
         validateDay(day, month, year);
 
         // initialization
-        this.year = year;
+        this.year  = year;
         this.month = month;
-        this.day = day;
+        this.day   = day;
     }
 
     /*
@@ -96,7 +96,7 @@ public class Date
     private static void validateYear(final int year)
     {
         // if year is less than minimum number of years or greater than current year throw illegal argument exception
-        if (year < MIN_NUM_YEARS || year > CURRENT_YEAR)
+        if(year < MIN_NUM_YEARS || year > CURRENT_YEAR)
         {
             throw new IllegalArgumentException("Invalid year entry: " + year);
         }
@@ -109,7 +109,7 @@ public class Date
     {
         // if month is less than minimum number of month or greater than maximum number of months throw illegal
         // argument exception
-        if (month < MIN_NUM_MONTHS || month > MAX_NUM_MONTHS)
+        if(month < MIN_NUM_MONTHS || month > MAX_NUM_MONTHS)
         {
             throw new IllegalArgumentException("Invalid month entry: " + month);
         }
@@ -124,7 +124,7 @@ public class Date
         // get days in month based on which month it is
         final int daysInTheMonth = getMaxDaysInMonth(month, year);
         // if day is less than minimum number of days or maximum number of days throw illegal argument exception
-        if (day < MIN_NUM_DAYS || day > daysInTheMonth)
+        if(day < MIN_NUM_DAYS || day > daysInTheMonth)
         {
             throw new IllegalArgumentException("Invalid day entry: " + day);
         }
@@ -141,7 +141,7 @@ public class Date
     private static int getMaxDaysInMonth(final int month, final int year)
     {
         // returns the days in the month given the current date and if it is a leap year
-        switch (month)
+        switch(month)
         {
             case FEBRUARY:
                 return isLeapYear(year) ? TWENTY_NINE : TWENTY_EIGHT;
@@ -220,7 +220,7 @@ public class Date
      */
     public String getDayOfTheWeek()
     {
-        int yearsSinceBaseCentury;
+        int       yearsSinceBaseCentury;
         final int centuryOffset;
         final int baseCaseSum;
         final int numOfTwelves;
@@ -231,10 +231,10 @@ public class Date
 
         // remaining years of base century
         yearsSinceBaseCentury = year % HUNDRED;
-        centuryOffset = getCenturyOffset(year);
+        centuryOffset         = getCenturyOffset(year);
 
         // if year is a leap year and months align, add 6 before calculation.
-        if (isLeapYear(year) && (month == JANUARY || month == FEBRUARY))
+        if(isLeapYear(year) && (month == JANUARY || month == FEBRUARY))
         {
             yearsSinceBaseCentury += SIX;
         }
@@ -242,14 +242,14 @@ public class Date
         // add centuryOffset to remaining years
         baseCaseSum = yearsSinceBaseCentury + centuryOffset;
 
-        numOfTwelves = baseCaseSum / MAX_NUM_MONTHS;
+        numOfTwelves   = baseCaseSum / MAX_NUM_MONTHS;
         remainderDates = baseCaseSum - (MAX_NUM_MONTHS * numOfTwelves);
-        numOfFours = remainderDates / FOUR;
+        numOfFours     = remainderDates / FOUR;
         // adds total sum of calculations with day from date
         totalSumWithDays = day + numOfTwelves + remainderDates + numOfFours;
         sumWithMonthCode = totalSumWithDays + getMonthCode(month);
 
-        switch (sumWithMonthCode % DAYS_IN_WEEK)
+        switch(sumWithMonthCode % DAYS_IN_WEEK)
         {
             case SATURDAY:
                 return "Saturday";
@@ -276,12 +276,12 @@ public class Date
     private static int getCenturyOffset(final int year)
     {
         // year is greater than or equal to 2000 return 6
-        if (year >= TWO_THOUSANDS)
+        if(year >= TWO_THOUSANDS)
         {
             return SIX;
         }
         // else if year is less than 1900 return 2
-        else if (year < NINETEEN_HUNDREDS)
+        else if(year < NINETEEN_HUNDREDS)
         {
             return TWO;
         }
@@ -293,7 +293,7 @@ public class Date
      */
     private static int getMonthCode(final int month)
     {
-        switch (month)
+        switch(month)
         {
             case JANUARY:
                 return JANUARY_CODE;

@@ -5,12 +5,13 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * Name class.
  * must not be null or blank,
- * cannot be more than 45 characters.
+ * cannot be more than MAX_NAME_LENGTH_CHARS characters.
  * <p>
  * Contains methods that will return the initials, full name and reverse
  * the name input.
  *
- * @author Richard Ho and Jayden Hutchinson
+ * @author Richard Ho
+ * @author Jayden Hutchinson
  * @version 1.0
  */
 public class Name
@@ -20,10 +21,10 @@ public class Name
     private final String last;
 
     // symbolic constants
-    private static final int MAX_NAME_LENGTH_CHARS = 45;
-    private static final int FIRST_CHAR = 0;
-    private static final int SECOND_CHAR = 1;
-    private static final String ADMIN = "admin";
+    private static final int    MAX_NAME_LENGTH_CHARS = 45;
+    private static final int    FIRST_CHAR            = 0;
+    private static final int    SECOND_CHAR           = 1;
+    private static final String ILLEGAL_STRING        = "admin";
 
     /**
      * Constructor for the Name class.
@@ -31,8 +32,7 @@ public class Name
      * @param first String that takes first name
      * @param last  String that takes last name
      *
-     * @throws IllegalArgumentException first or last name is null, bank, or less than the maximum name length in
-     *                                  characters
+     * @throws IllegalArgumentException first or last name is null, blank, or less than MAX_NAME_LENGTH_CHARS
      */
     public Name(final String first, final String last)
     {
@@ -42,28 +42,30 @@ public class Name
 
         // assign Variables
         this.first = first;
-        this.last = last;
+        this.last  = last;
     }
 
     /*
-     * Validator method to check if firstname is within 45 characters, not "admin", null or blank
+     * Validator method to check if firstname is within MAX_NAME_LENGTH_CHARS, does not include
+     * ILLEGAL_STRING, null or blank
      */
     private static void validateFirstName(final String first)
     {
         // if first is null, blank, or less than maximum length, throw exception
-        if (first == null || first.isBlank() || first.length() > MAX_NAME_LENGTH_CHARS || first.equalsIgnoreCase(ADMIN))
+        if(first == null || first.isBlank() || first.length() > MAX_NAME_LENGTH_CHARS || first.equalsIgnoreCase(ILLEGAL_STRING))
         {
             throw new IllegalArgumentException("Invalid first name entry");
         }
     }
 
     /*
-     * Validator method to check if lastname is within 45 characters, not "admin", null or blank
+     * Validator method to check if lastname is within MAX_NAME_LENGTH_CHARS characters, does not include
+     * ILLEGAL_STRING, null, or blank
      */
     private static void validateLastName(final String last)
     {
-        // if last is null, blank, or less than maximum length, throw exception
-        if (last == null || last.isBlank() || last.length() > MAX_NAME_LENGTH_CHARS || last.equalsIgnoreCase(ADMIN))
+        // if last is null, blank, or less than MAX_NAME_LENGTH_CHARS, throw exception
+        if(last == null || last.isBlank() || last.length() > MAX_NAME_LENGTH_CHARS || last.equalsIgnoreCase(ILLEGAL_STRING))
         {
             throw new IllegalArgumentException("Invalid last name entry");
         }

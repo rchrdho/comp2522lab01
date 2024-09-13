@@ -11,25 +11,10 @@ package ca.bcit.comp2522.bank;
  */
 public class BankClient extends Person
 {
-
-    /*
-     * Date that client signed up
-     */
-    private final Date signupDate;
-
-    /*
-     * Client ID; must be 6 or 7 digits long
-     */
+    private final Date   signupDate;
     private final String clientID;
 
-    /*
-     * Minimum length that a clientID may be
-     */
     private static final int MIN_CLIENTID_CHARACTER_LENGTH = 6;
-
-    /*
-     * Maximum length that a clientID may be
-     */
     private static final int MAX_CLIENTID_CHARACTER_LENGTH = 7;
 
     /**
@@ -46,7 +31,7 @@ public class BankClient extends Person
         // validate client id length and assign variables
         validateClientID(clientID);
         this.signupDate = signupDate;
-        this.clientID = clientID;
+        this.clientID   = clientID;
     }
 
     /**
@@ -61,7 +46,7 @@ public class BankClient extends Person
     }
 
     /*
-     * Validates that the clientID is between 6 and 7 digits long
+     * Validates that the clientID is between MIN_CLIENTID_CHARACTER_LENGTH and MAX_CLIENTID_CHARACTER_LENGTH
      *
      * @param clientID a String for ClientID
      *
@@ -69,9 +54,10 @@ public class BankClient extends Person
      */
     private void validateClientID(final String clientID)
     {
-        // if client id length is less than the minimum client id length or longer than the maximum length throw
+        // if client id length is less than MIN_CLIENTID_CHARACTER_LENGTH or longer than MAX_CLIENTID_CHARACTER_LENGTH
+        // throw
         // illegal argument exception
-        if (clientID.length() < MIN_CLIENTID_CHARACTER_LENGTH || clientID.length() > MAX_CLIENTID_CHARACTER_LENGTH)
+        if(clientID.length() < MIN_CLIENTID_CHARACTER_LENGTH || clientID.length() > MAX_CLIENTID_CHARACTER_LENGTH)
         {
             throw new IllegalArgumentException("Invalid Client ID");
         }
