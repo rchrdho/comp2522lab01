@@ -52,7 +52,8 @@ public class Name
     private static void validateFirstName(final String first)
     {
         // if first is null, blank, or less than maximum length, throw exception
-        if(first == null || first.isBlank() || first.length() > MAX_NAME_LENGTH_CHARS || first.equalsIgnoreCase(ILLEGAL_STRING))
+        if(first == null || first.isBlank() || first.length() > MAX_NAME_LENGTH_CHARS ||
+                first.equalsIgnoreCase(ILLEGAL_STRING))
         {
             throw new IllegalArgumentException("Invalid first name entry");
         }

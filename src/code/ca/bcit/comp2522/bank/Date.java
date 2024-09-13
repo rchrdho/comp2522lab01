@@ -9,8 +9,8 @@ package ca.bcit.comp2522.bank;
  * individually. A method that can calculate the exact day of the week, ie: WEDNESDAY. Helper methods are implemented
  * to determine a leap year to calculate the number of days for the month
  *
- * @author Richard Ho
- * @author Jayden Hutchinson
+ * @author  Richard Ho
+ * @author  Jayden Hutchinson
  * @version 2.0
  */
 public class Date
@@ -93,9 +93,9 @@ public class Date
         validateDay(day, month, year);
 
         // initialization
-        this.year = year;
-        this.month = month;
-        this.day = day;
+        this.year   = year;
+        this.month  = month;
+        this.day    = day;
     }
 
     /*
@@ -146,7 +146,7 @@ public class Date
      * @param month a Integer
      * @param year  a Integer
      *
-     * @return The number of total days in the month with leap year considered
+     * @return      The number of total days in the month with leap year considered
      */
     private static int getMaxDaysInMonth(final int month,
                                          final int year)
@@ -173,7 +173,8 @@ public class Date
      */
     private static boolean isLeapYear(final int year)
     {
-        return (year % LEAP_YEAR_DIVISOR == NO_REMAINDER && year % CENTURY_DIVISOR != NO_REMAINDER) || (year % LEAP_YEAR_SPECIAL_DIVISOR == NO_REMAINDER);
+        return (year % LEAP_YEAR_DIVISOR == NO_REMAINDER && year % CENTURY_DIVISOR != NO_REMAINDER) ||
+                (year % LEAP_YEAR_SPECIAL_DIVISOR == NO_REMAINDER);
     }
 
     /**
@@ -243,7 +244,6 @@ public class Date
      *
      * @return the day of the week as a string (e.g., "Monday", "Tuesday").
      */
-
     public String getDayOfTheWeek()
     {
         int yearsSinceBaseCentury;
