@@ -131,7 +131,8 @@ public class Date
                                     final int year)
     {
         // get days in month based on which month it is
-        final int daysInTheMonth = getMaxDaysInMonth(month, year);
+        final int daysInTheMonth;
+        daysInTheMonth = getMaxDaysInMonth(month, year);
         // if day is less than minimum number of days or maximum number of days throw illegal argument exception
         if (day < MIN_NUM_DAYS || day > daysInTheMonth)
         {
@@ -362,7 +363,8 @@ public class Date
      */
     public static void main(final String[] args)
     {
-        Date date = new Date(1977, 10, 31);
+        Date date;
+        date = new Date(1977, 10, 31);
 
         System.out.println(date);
         System.out.println(date.getYYYYMMDD());
