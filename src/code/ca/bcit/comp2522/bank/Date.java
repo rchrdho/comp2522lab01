@@ -9,55 +9,54 @@ package ca.bcit.comp2522.bank;
  * individually. A method that can calculate the exact day of the week, ie: WEDNESDAY. Helper methods are implemented
  * to determine a leap year to calculate the number of days for the month
  *
- * @author  Richard Ho
- * @author  Jayden Hutchinson
+ * @author Richard Ho
+ * @author Jayden Hutchinson
  * @version 2.0
  */
 public class Date
 {
     // symbolic constants
-    static final int MIN_NUM_YEARS              = 1800;
-    static final int CURRENT_YEAR               = 2024;
-    static final int MIN_NUM_MONTHS             = 1;
-    static final int MAX_NUM_MONTHS             = 12;
-    static final int MIN_NUM_DAYS               = 1;
-    static final int MAX_NUM_DAYS               = 31;
-    static final int DAYS_IN_WEEK               = 7;
-    static final int DAYS_IN_OTHER_MONTHS       = 30; // days in April, June, September, November
-    static final int DAYS_IN_LONGER_FEBRUARY    = 29;
-    static final int DAYS_IN_SHORTER_FEBRUARY   = 28;
-    static final int YEAR_NINETEEN_HUNDREDS     = 1900;
-    static final int YEAR_TWO_THOUSANDS         = 2000;
-    static final int LEAP_YEAR_DIVISOR          = 4;
-    static final int NO_REMAINDER               = 0;
-    static final int CENTURY_DIVISOR            = 100;
-    static final int LEAP_YEAR_SPECIAL_DIVISOR  = 400;
-    static final int CENTURY_OFFSET_MODIFIER    = 6;
-    static final int PRE_19TH_CENTURY_OFFSET    = 2;
-    static final int TWELVE_YEAR_PERIOD         = 12;
-    static final int FOUR_YEAR_PERIOD           = 4;
+    static final int MIN_NUM_YEARS             = 1800;
+    static final int CURRENT_YEAR              = 2024;
+    static final int MIN_NUM_MONTHS            = 1;
+    static final int MAX_NUM_MONTHS            = 12;
+    static final int MIN_NUM_DAYS              = 1;
+    static final int MAX_NUM_DAYS              = 31;
+    static final int DAYS_IN_WEEK              = 7;
+    static final int DAYS_IN_OTHER_MONTHS      = 30; // days in April, June, September, November
+    static final int DAYS_IN_LONGER_FEBRUARY   = 29;
+    static final int DAYS_IN_SHORTER_FEBRUARY  = 28;
+    static final int YEAR_NINETEEN_HUNDREDS    = 1900;
+    static final int YEAR_TWO_THOUSANDS        = 2000;
+    static final int LEAP_YEAR_DIVISOR         = 4;
+    static final int NO_REMAINDER              = 0;
+    static final int CENTURY_DIVISOR           = 100;
+    static final int LEAP_YEAR_SPECIAL_DIVISOR = 400;
+    static final int CENTURY_OFFSET_MODIFIER   = 6;
+    static final int PRE_19TH_CENTURY_OFFSET   = 2;
+    static final int TWELVE_YEAR_PERIOD        = 12;
+    static final int FOUR_YEAR_PERIOD          = 4;
 
+    private static final int SATURDAY  = 0;
+    private static final int SUNDAY    = 1;
+    private static final int MONDAY    = 2;
+    private static final int TUESDAY   = 3;
+    private static final int WEDNESDAY = 4;
+    private static final int THURSDAY  = 5;
+    private static final int FRIDAY    = 6;
 
-    private static final int SATURDAY   = 0;
-    private static final int SUNDAY     = 1;
-    private static final int MONDAY     = 2;
-    private static final int TUESDAY    = 3;
-    private static final int WEDNESDAY  = 4;
-    private static final int THURSDAY   = 5;
-    private static final int FRIDAY     = 6;
-
-    private static final int JANUARY    = 1;
-    private static final int FEBRUARY   = 2;
-    private static final int MARCH      = 3;
-    private static final int APRIL      = 4;
-    private static final int MAY        = 5;
-    private static final int JUNE       = 6;
-    private static final int JULY       = 7;
-    private static final int AUGUST     = 8;
-    private static final int SEPTEMBER  = 9;
-    private static final int OCTOBER    = 10;
-    private static final int NOVEMBER   = 11;
-    private static final int DECEMBER   = 12;
+    private static final int JANUARY   = 1;
+    private static final int FEBRUARY  = 2;
+    private static final int MARCH     = 3;
+    private static final int APRIL     = 4;
+    private static final int MAY       = 5;
+    private static final int JUNE      = 6;
+    private static final int JULY      = 7;
+    private static final int AUGUST    = 8;
+    private static final int SEPTEMBER = 9;
+    private static final int OCTOBER   = 10;
+    private static final int NOVEMBER  = 11;
+    private static final int DECEMBER  = 12;
 
     private static final int JANUARY_CODE   = 1;
     private static final int FEBRUARY_CODE  = 4;
@@ -93,9 +92,9 @@ public class Date
         validateDay(day, month, year);
 
         // initialization
-        this.year   = year;
-        this.month  = month;
-        this.day    = day;
+        this.year  = year;
+        this.month = month;
+        this.day   = day;
     }
 
     /*
@@ -104,7 +103,7 @@ public class Date
     private static void validateYear(final int year)
     {
         // if year is less than minimum number of years or greater than current year throw illegal argument exception
-        if (year < MIN_NUM_YEARS || year > CURRENT_YEAR)
+        if(year < MIN_NUM_YEARS || year > CURRENT_YEAR)
         {
             throw new IllegalArgumentException("Invalid year entry: " + year);
         }
@@ -117,7 +116,7 @@ public class Date
     {
         // if month is less than minimum number of month or greater than maximum number of months throw illegal
         // argument exception
-        if (month < MIN_NUM_MONTHS || month > MAX_NUM_MONTHS)
+        if(month < MIN_NUM_MONTHS || month > MAX_NUM_MONTHS)
         {
             throw new IllegalArgumentException("Invalid month entry: " + month);
         }
@@ -248,40 +247,40 @@ public class Date
     {
         int yearsSinceBaseCentury;
 
-        final int       centuryOffset;
-        final int       baseCaseSum;
-        final int       numOfTwelves;
-        final int       remainderDates;
-        final int       numOfFours;
-        final int       totalSumWithDays;
-        final int       sumWithMonthCode;
-        final int       dayOfWeekCode;
-        final int       monthCode;
-        final boolean   leapYear;
+        final int     centuryOffset;
+        final int     baseCaseSum;
+        final int     numOfTwelves;
+        final int     remainderDates;
+        final int     numOfFours;
+        final int     totalSumWithDays;
+        final int     sumWithMonthCode;
+        final int     dayOfWeekCode;
+        final int     monthCode;
+        final boolean leapYear;
 
         // remaining years of base century
-        yearsSinceBaseCentury   = year % CENTURY_DIVISOR;
-        centuryOffset           = getCenturyOffset(year);
-        leapYear                = isLeapYear(year);
-        monthCode               = getMonthCode(month);
+        yearsSinceBaseCentury = year % CENTURY_DIVISOR;
+        centuryOffset         = getCenturyOffset(year);
+        leapYear              = isLeapYear(year);
+        monthCode             = getMonthCode(month);
 
-        // if year isLeapYear and month is JANUARY or FEBRUARY, add 6 before calculation.
-        if (leapYear && (month == JANUARY || month == FEBRUARY))
+        // if year isLeapYear and month is JANUARY or FEBRUARY, add CENTURY_OFFSET_MODIFIER before calculation.
+        if(leapYear && (month == JANUARY || month == FEBRUARY))
         {
             yearsSinceBaseCentury += CENTURY_OFFSET_MODIFIER;
         }
 
         // add centuryOffset to yearsSinceBaseCentury
-        baseCaseSum         = yearsSinceBaseCentury + centuryOffset;
-        numOfTwelves        = baseCaseSum / TWELVE_YEAR_PERIOD;
-        remainderDates      = baseCaseSum - (MAX_NUM_MONTHS * numOfTwelves);
-        numOfFours          = remainderDates / FOUR_YEAR_PERIOD;
+        baseCaseSum    = yearsSinceBaseCentury + centuryOffset;
+        numOfTwelves   = baseCaseSum / TWELVE_YEAR_PERIOD;
+        remainderDates = baseCaseSum - (MAX_NUM_MONTHS * numOfTwelves);
+        numOfFours     = remainderDates / FOUR_YEAR_PERIOD;
         // adds total sum of calculations with day from date
-        totalSumWithDays    = day + numOfTwelves + remainderDates + numOfFours;
-        sumWithMonthCode    = totalSumWithDays + monthCode;
-        dayOfWeekCode       = sumWithMonthCode % DAYS_IN_WEEK;
+        totalSumWithDays = day + numOfTwelves + remainderDates + numOfFours;
+        sumWithMonthCode = totalSumWithDays + monthCode;
+        dayOfWeekCode    = sumWithMonthCode % DAYS_IN_WEEK;
 
-        switch (dayOfWeekCode)
+        switch(dayOfWeekCode)
         {
             case SATURDAY:
                 return "Saturday";
@@ -303,17 +302,17 @@ public class Date
     }
 
     /*
-     * returns values that correlate to base year. (base year being 18XX 19XX 20XX
+     * returns values that correlate to base year. (base year being 18XX 19XX 20XX)
      */
     private static int getCenturyOffset(final int year)
     {
-        // year is greater than or equal to 2000 return 6
-        if (year >= YEAR_TWO_THOUSANDS)
+        // year is greater than or equal to YEAR_TWO_THOUSAND return CENTURY_OFFSET_MODIFIER
+        if(year >= YEAR_TWO_THOUSANDS)
         {
             return CENTURY_OFFSET_MODIFIER;
         }
-        // else if year is less than 1900 return 2
-        else if (year < YEAR_NINETEEN_HUNDREDS)
+        // else if year is less than YEAR_NINETEEN_HUNDREDS return PRE_19TH_CENTURY_OFFSET
+        else if(year < YEAR_NINETEEN_HUNDREDS)
         {
             return PRE_19TH_CENTURY_OFFSET;
         }
@@ -325,7 +324,7 @@ public class Date
      */
     private static int getMonthCode(final int month)
     {
-        switch (month)
+        switch(month)
         {
             case JANUARY:
                 return JANUARY_CODE;
@@ -363,9 +362,7 @@ public class Date
      */
     public static void main(final String[] args)
     {
-        Date date;
-
-        date = new Date(1977, 10, 31);
+        Date date = new Date(1977, 10, 31);
 
         System.out.println(date);
         System.out.println(date.getYYYYMMDD());

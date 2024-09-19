@@ -48,13 +48,12 @@ public class Name
 
     /*
      * Validator method to check if firstname is within MAX_NAME_LENGTH_CHARS, does not include
-     * ILLEGAL_STRING, null or blank
+     * "admin" at any point, null or blank
      */
-    private static void validateFirstName(final String first)
+    private static void validateFirstName(final String firstName)
     {
-        // if first is null, blank, or less than maximum length, throw exception
-        if(first == null || first.isBlank() || first.length() > MAX_NAME_LENGTH_CHARS ||
-                first.equalsIgnoreCase(ILLEGAL_STRING))
+        // if firstName is null, blank, or less than maximum length, throw exception
+        if(firstName == null || firstName.isBlank() || firstName.length() > MAX_NAME_LENGTH_CHARS || firstName.equalsIgnoreCase(ILLEGAL_STRING))
         {
             throw new IllegalArgumentException("Invalid first name entry");
         }
@@ -62,12 +61,12 @@ public class Name
 
     /*
      * Validator method to check if lastname is within MAX_NAME_LENGTH_CHARS characters, does not include
-     * ILLEGAL_STRING, null, or blank
+     * "admin" at any point, null, or blank
      */
-    private static void validateLastName(final String last)
+    private static void validateLastName(final String lastName)
     {
-        // if last is null, blank, or less than MAX_NAME_LENGTH_CHARS, throw exception
-        if(last == null || last.isBlank() || last.length() > MAX_NAME_LENGTH_CHARS || last.equalsIgnoreCase(ILLEGAL_STRING))
+        // if lastName is null, blank, or less than MAX_NAME_LENGTH_CHARS, throw exception
+        if(lastName == null || lastName.isBlank() || lastName.length() > MAX_NAME_LENGTH_CHARS || lastName.equalsIgnoreCase(ILLEGAL_STRING))
         {
             throw new IllegalArgumentException("Invalid last name entry");
         }
