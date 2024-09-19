@@ -12,7 +12,7 @@ package ca.bcit.comp2522.bank;
  */
 public class BankAccount
 {
-    double balanceUsd;
+    private double balanceUsd;
 
     private final BankClient client;
     private final String     accountNumber;
@@ -30,7 +30,12 @@ public class BankAccount
      * @param accountOpenedDate a Date this person opened account
      * @param accountClosedDate a Date this person closed account
      */
-    public BankAccount(final BankClient client, final String accountNumber, final int pin, final double balanceUsd, final Date accountOpenedDate, final Date accountClosedDate)
+    public BankAccount(final BankClient client,
+                       final String accountNumber,
+                       final int pin,
+                       final double balanceUsd,
+                       final Date accountOpenedDate,
+                       final Date accountClosedDate)
     {
         // assign variables
         this.client            = client;
@@ -63,7 +68,8 @@ public class BankAccount
      *
      * @throws IllegalArgumentException Invalid pin if pin does not match
      */
-    public void withdraw(final double amountToWithdrawUsd, final int pinToMatch)
+    public void withdraw(final double amountToWithdrawUsd,
+                         final int pinToMatch)
     {
         // if pin does not match the recorded pin throw illegal argument exception
         if(pinToMatch != pin)
@@ -72,7 +78,6 @@ public class BankAccount
         }
         // subtract amount given from current balance
         balanceUsd -= amountToWithdrawUsd;
-        System.out.println("-" + amountToWithdrawUsd + " Withdrawn\nNew Balance: " + balanceUsd);
     }
 
     /**
@@ -84,7 +89,9 @@ public class BankAccount
     public String getDetails()
     {
         // String builder instantiation
-        StringBuilder returnString = new StringBuilder();
+        final StringBuilder returnString;
+
+        returnString = new StringBuilder();
 
         // append client full name, their current balance, account number, and date account opened
         returnString.append(client.getName().getFullName()).append(" had $").append(balanceUsd).append(" in account ").append(accountNumber).append(" which ").append("they").append(" opened on ").append(accountOpenedDate.getDayOfTheWeek()).append(" ").append(client.getMonthName(accountOpenedDate.getMonth())).append(" ").append(accountOpenedDate.getDay()).append(", ").append(accountOpenedDate.getYear());

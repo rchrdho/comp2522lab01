@@ -248,16 +248,16 @@ public class Date
     {
         int yearsSinceBaseCentury;
 
-        final int centuryOffset;
-        final int baseCaseSum;
-        final int numOfTwelves;
-        final int remainderDates;
-        final int numOfFours;
-        final int totalSumWithDays;
-        final int sumWithMonthCode;
-        final int dayOfWeekCode;
-        final int monthCode;
-        final boolean leapYear;
+        final int       centuryOffset;
+        final int       baseCaseSum;
+        final int       numOfTwelves;
+        final int       remainderDates;
+        final int       numOfFours;
+        final int       totalSumWithDays;
+        final int       sumWithMonthCode;
+        final int       dayOfWeekCode;
+        final int       monthCode;
+        final boolean   leapYear;
 
         // remaining years of base century
         yearsSinceBaseCentury   = year % CENTURY_DIVISOR;
@@ -363,7 +363,9 @@ public class Date
      */
     public static void main(final String[] args)
     {
-        Date date = new Date(1977, 10, 31);
+        Date date;
+
+        date = new Date(1977, 10, 31);
 
         System.out.println(date);
         System.out.println(date.getYYYYMMDD());

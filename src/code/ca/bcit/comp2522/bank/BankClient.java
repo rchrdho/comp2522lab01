@@ -23,7 +23,9 @@ public class BankClient extends Person
      * @param signupDate a Date this Client signed up on
      * @param clientID   a String that represents this Client
      */
-    public BankClient(final Date signupDate, final String clientID, final Person person)
+    public BankClient(final Date signupDate,
+                      final String clientID,
+                      final Person person)
     {
         // Person object constructor call
         super(person.getName(), person.getBirthDate(), person.getDeathDate());

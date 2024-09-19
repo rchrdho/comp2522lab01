@@ -34,7 +34,8 @@ public class Name
      *
      * @throws IllegalArgumentException first or last name is null, blank, or less than MAX_NAME_LENGTH_CHARS
      */
-    public Name(final String first, final String last)
+    public Name(final String first,
+                final String last)
     {
         // validate Inputs
         validateFirstName(first);
