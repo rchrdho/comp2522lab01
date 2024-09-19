@@ -59,7 +59,8 @@ public class Person
     {
         // Builds a string based on whether the person is alive or dead
         // Either alive, or dead, in which case it will provide the DAY(name), MONTH DAY(integer), YEAR
-        final String status = (deathDate == null) ? ALIVE_STATUS : DEATH_STATUS + " " + deathDate.getDayOfTheWeek() + "," + " " + this.getMonthName(deathDate.getMonth()) + " " + deathDate.getDay() + ", " + deathDate.getYear();
+        final String status;
+        status = (deathDate == null) ? ALIVE_STATUS : DEATH_STATUS + " " + deathDate.getDayOfTheWeek() + "," + " " + this.getMonthName(deathDate.getMonth()) + " " + deathDate.getDay() + ", " + deathDate.getYear();
 
         // Concatenates the person's current dead or alive status with the person's birth date
         return String.format("%s (%s) was born on %s, %s %02d, %d", name.getFullName(), status, birthDate.getDayOfTheWeek(), getMonthName(birthDate.getMonth()), birthDate.getDay(), birthDate.getYear());
